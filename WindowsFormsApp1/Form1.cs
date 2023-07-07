@@ -177,6 +177,36 @@ namespace WindowsFormsApp1
 			ResultLabel.Text += value;
 			Tools.resizeFont(ResultLabel);
 		}
+
+		private void PlusMinusButton_Click(object sender, EventArgs e)
+		{
+			if (ResultLabel.Text.StartsWith("-"))
+			{
+				ResultLabel.Text = ResultLabel.Text.Remove(0, 1);
+			}
+			else
+			{
+				ResultLabel.Text = "-" + ResultLabel.Text;
+			}
+		}
+
+		private void ReverseDivButton_Click(object sender, EventArgs e)
+		{
+			ResultLabel.Text = "1/" + ResultLabel.Text;
+			Tools.calculateResult(ResultLabel, PreviewLabel);
+		}
+
+		private void SquareButton_Click(object sender, EventArgs e)
+		{
+			ResultLabel.Text = $"Pow({ResultLabel.Text}| 2)";
+			Tools.calculateResult(ResultLabel, PreviewLabel);
+			int first = PreviewLabel.Text.IndexOf('(');
+			int last = PreviewLabel.Text.LastIndexOf(')');
+			string arguments = PreviewLabel.Text.Substring(first + 1, last - first - 1);
+			arguments = arguments.Replace(", ", ",");
+			string[] divided = arguments.Split(',');
+			PreviewLabel.Text = $"{divided[0]}^{divided[1]}";
+		}
 	}
 	public class Tools
 	{
@@ -209,6 +239,7 @@ namespace WindowsFormsApp1
 		public static void calculateResult(Label label, Label preview)
 		{
 			label.Text = label.Text.Replace(",", ".");
+			label.Text = label.Text.Replace("|", ",");
 			Expression expression = new Expression(label.Text);
 			preview.Text = label.Text;
 			try

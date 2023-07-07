@@ -50,14 +50,18 @@
 			this.EraseButton = new System.Windows.Forms.Button();
 			this.PreviewLabel = new System.Windows.Forms.Label();
 			this.PointButton = new System.Windows.Forms.Button();
+			this.PowerButton = new System.Windows.Forms.Button();
+			this.SquareButton = new System.Windows.Forms.Button();
+			this.PlusMinusButton = new System.Windows.Forms.Button();
+			this.ReverseDivButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// NumButton7
 			// 
 			this.NumButton7.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton7.Location = new System.Drawing.Point(0, 224);
+			this.NumButton7.Location = new System.Drawing.Point(0, 274);
 			this.NumButton7.Name = "NumButton7";
-			this.NumButton7.Size = new System.Drawing.Size(75, 75);
+			this.NumButton7.Size = new System.Drawing.Size(60, 60);
 			this.NumButton7.TabIndex = 0;
 			this.NumButton7.Text = "7";
 			this.NumButton7.UseVisualStyleBackColor = true;
@@ -65,9 +69,9 @@
 			// NumButton4
 			// 
 			this.NumButton4.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton4.Location = new System.Drawing.Point(0, 304);
+			this.NumButton4.Location = new System.Drawing.Point(0, 339);
 			this.NumButton4.Name = "NumButton4";
-			this.NumButton4.Size = new System.Drawing.Size(75, 75);
+			this.NumButton4.Size = new System.Drawing.Size(60, 60);
 			this.NumButton4.TabIndex = 3;
 			this.NumButton4.Text = "4";
 			this.NumButton4.UseVisualStyleBackColor = true;
@@ -75,9 +79,9 @@
 			// NumButton5
 			// 
 			this.NumButton5.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton5.Location = new System.Drawing.Point(80, 304);
+			this.NumButton5.Location = new System.Drawing.Point(66, 339);
 			this.NumButton5.Name = "NumButton5";
-			this.NumButton5.Size = new System.Drawing.Size(75, 75);
+			this.NumButton5.Size = new System.Drawing.Size(60, 60);
 			this.NumButton5.TabIndex = 4;
 			this.NumButton5.Text = "5";
 			this.NumButton5.UseVisualStyleBackColor = true;
@@ -85,9 +89,9 @@
 			// NumButton6
 			// 
 			this.NumButton6.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton6.Location = new System.Drawing.Point(160, 304);
+			this.NumButton6.Location = new System.Drawing.Point(132, 339);
 			this.NumButton6.Name = "NumButton6";
-			this.NumButton6.Size = new System.Drawing.Size(75, 75);
+			this.NumButton6.Size = new System.Drawing.Size(60, 60);
 			this.NumButton6.TabIndex = 5;
 			this.NumButton6.Text = "6";
 			this.NumButton6.UseVisualStyleBackColor = true;
@@ -95,9 +99,9 @@
 			// NumButton9
 			// 
 			this.NumButton9.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton9.Location = new System.Drawing.Point(160, 223);
+			this.NumButton9.Location = new System.Drawing.Point(132, 273);
 			this.NumButton9.Name = "NumButton9";
-			this.NumButton9.Size = new System.Drawing.Size(75, 75);
+			this.NumButton9.Size = new System.Drawing.Size(60, 60);
 			this.NumButton9.TabIndex = 7;
 			this.NumButton9.Text = "9";
 			this.NumButton9.UseVisualStyleBackColor = true;
@@ -105,9 +109,9 @@
 			// NumButton8
 			// 
 			this.NumButton8.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton8.Location = new System.Drawing.Point(80, 223);
+			this.NumButton8.Location = new System.Drawing.Point(66, 273);
 			this.NumButton8.Name = "NumButton8";
-			this.NumButton8.Size = new System.Drawing.Size(75, 75);
+			this.NumButton8.Size = new System.Drawing.Size(60, 60);
 			this.NumButton8.TabIndex = 6;
 			this.NumButton8.Text = "8";
 			this.NumButton8.UseVisualStyleBackColor = true;
@@ -115,9 +119,9 @@
 			// NumButton3
 			// 
 			this.NumButton3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton3.Location = new System.Drawing.Point(160, 384);
+			this.NumButton3.Location = new System.Drawing.Point(132, 405);
 			this.NumButton3.Name = "NumButton3";
-			this.NumButton3.Size = new System.Drawing.Size(75, 75);
+			this.NumButton3.Size = new System.Drawing.Size(60, 60);
 			this.NumButton3.TabIndex = 10;
 			this.NumButton3.Text = "3";
 			this.NumButton3.UseVisualStyleBackColor = true;
@@ -125,9 +129,9 @@
 			// NumButton2
 			// 
 			this.NumButton2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton2.Location = new System.Drawing.Point(80, 384);
+			this.NumButton2.Location = new System.Drawing.Point(66, 405);
 			this.NumButton2.Name = "NumButton2";
-			this.NumButton2.Size = new System.Drawing.Size(75, 75);
+			this.NumButton2.Size = new System.Drawing.Size(60, 60);
 			this.NumButton2.TabIndex = 9;
 			this.NumButton2.Text = "2";
 			this.NumButton2.UseVisualStyleBackColor = true;
@@ -135,9 +139,9 @@
 			// NumButton1
 			// 
 			this.NumButton1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton1.Location = new System.Drawing.Point(0, 384);
+			this.NumButton1.Location = new System.Drawing.Point(0, 405);
 			this.NumButton1.Name = "NumButton1";
-			this.NumButton1.Size = new System.Drawing.Size(75, 75);
+			this.NumButton1.Size = new System.Drawing.Size(60, 60);
 			this.NumButton1.TabIndex = 8;
 			this.NumButton1.Text = "1";
 			this.NumButton1.UseVisualStyleBackColor = true;
@@ -150,7 +154,7 @@
 			this.ResultLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.ResultLabel.Location = new System.Drawing.Point(0, 52);
 			this.ResultLabel.Name = "ResultLabel";
-			this.ResultLabel.Size = new System.Drawing.Size(316, 85);
+			this.ResultLabel.Size = new System.Drawing.Size(258, 85);
 			this.ResultLabel.TabIndex = 11;
 			this.ResultLabel.Text = "0";
 			this.ResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -158,9 +162,9 @@
 			// NumButton0
 			// 
 			this.NumButton0.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NumButton0.Location = new System.Drawing.Point(80, 465);
+			this.NumButton0.Location = new System.Drawing.Point(66, 471);
 			this.NumButton0.Name = "NumButton0";
-			this.NumButton0.Size = new System.Drawing.Size(75, 75);
+			this.NumButton0.Size = new System.Drawing.Size(60, 60);
 			this.NumButton0.TabIndex = 12;
 			this.NumButton0.Text = "0";
 			this.NumButton0.UseVisualStyleBackColor = true;
@@ -168,9 +172,9 @@
 			// ClearButton
 			// 
 			this.ClearButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.ClearButton.Location = new System.Drawing.Point(0, 142);
+			this.ClearButton.Location = new System.Drawing.Point(0, 140);
 			this.ClearButton.Name = "ClearButton";
-			this.ClearButton.Size = new System.Drawing.Size(75, 75);
+			this.ClearButton.Size = new System.Drawing.Size(60, 60);
 			this.ClearButton.TabIndex = 13;
 			this.ClearButton.Text = "C";
 			this.ClearButton.UseVisualStyleBackColor = true;
@@ -179,9 +183,9 @@
 			// ResultButton
 			// 
 			this.ResultButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.ResultButton.Location = new System.Drawing.Point(241, 465);
+			this.ResultButton.Location = new System.Drawing.Point(198, 472);
 			this.ResultButton.Name = "ResultButton";
-			this.ResultButton.Size = new System.Drawing.Size(75, 75);
+			this.ResultButton.Size = new System.Drawing.Size(60, 60);
 			this.ResultButton.TabIndex = 15;
 			this.ResultButton.Text = "=";
 			this.ResultButton.UseVisualStyleBackColor = true;
@@ -190,9 +194,9 @@
 			// AddButton
 			// 
 			this.AddButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.AddButton.Location = new System.Drawing.Point(241, 384);
+			this.AddButton.Location = new System.Drawing.Point(198, 406);
 			this.AddButton.Name = "AddButton";
-			this.AddButton.Size = new System.Drawing.Size(75, 75);
+			this.AddButton.Size = new System.Drawing.Size(60, 60);
 			this.AddButton.TabIndex = 16;
 			this.AddButton.Text = "+";
 			this.AddButton.UseVisualStyleBackColor = true;
@@ -200,9 +204,9 @@
 			// SubButton
 			// 
 			this.SubButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.SubButton.Location = new System.Drawing.Point(241, 303);
+			this.SubButton.Location = new System.Drawing.Point(198, 339);
 			this.SubButton.Name = "SubButton";
-			this.SubButton.Size = new System.Drawing.Size(75, 75);
+			this.SubButton.Size = new System.Drawing.Size(60, 60);
 			this.SubButton.TabIndex = 17;
 			this.SubButton.Text = "-";
 			this.SubButton.UseVisualStyleBackColor = true;
@@ -210,9 +214,9 @@
 			// MulButton
 			// 
 			this.MulButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.MulButton.Location = new System.Drawing.Point(241, 222);
+			this.MulButton.Location = new System.Drawing.Point(198, 273);
 			this.MulButton.Name = "MulButton";
-			this.MulButton.Size = new System.Drawing.Size(75, 75);
+			this.MulButton.Size = new System.Drawing.Size(60, 60);
 			this.MulButton.TabIndex = 18;
 			this.MulButton.Text = "*";
 			this.MulButton.UseVisualStyleBackColor = true;
@@ -220,9 +224,9 @@
 			// DivButton
 			// 
 			this.DivButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.DivButton.Location = new System.Drawing.Point(241, 142);
+			this.DivButton.Location = new System.Drawing.Point(198, 207);
 			this.DivButton.Name = "DivButton";
-			this.DivButton.Size = new System.Drawing.Size(75, 75);
+			this.DivButton.Size = new System.Drawing.Size(60, 60);
 			this.DivButton.TabIndex = 19;
 			this.DivButton.Text = "/";
 			this.DivButton.UseVisualStyleBackColor = true;
@@ -230,9 +234,9 @@
 			// LeftBracketButton
 			// 
 			this.LeftBracketButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.LeftBracketButton.Location = new System.Drawing.Point(0, 465);
+			this.LeftBracketButton.Location = new System.Drawing.Point(0, 471);
 			this.LeftBracketButton.Name = "LeftBracketButton";
-			this.LeftBracketButton.Size = new System.Drawing.Size(75, 75);
+			this.LeftBracketButton.Size = new System.Drawing.Size(60, 60);
 			this.LeftBracketButton.TabIndex = 20;
 			this.LeftBracketButton.Text = "(";
 			this.LeftBracketButton.UseVisualStyleBackColor = true;
@@ -240,9 +244,9 @@
 			// RightBracketButton
 			// 
 			this.RightBracketButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.RightBracketButton.Location = new System.Drawing.Point(160, 465);
+			this.RightBracketButton.Location = new System.Drawing.Point(132, 471);
 			this.RightBracketButton.Name = "RightBracketButton";
-			this.RightBracketButton.Size = new System.Drawing.Size(75, 75);
+			this.RightBracketButton.Size = new System.Drawing.Size(60, 60);
 			this.RightBracketButton.TabIndex = 21;
 			this.RightBracketButton.Text = ")";
 			this.RightBracketButton.UseVisualStyleBackColor = true;
@@ -250,9 +254,9 @@
 			// EraseButton
 			// 
 			this.EraseButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.EraseButton.Location = new System.Drawing.Point(80, 142);
+			this.EraseButton.Location = new System.Drawing.Point(66, 140);
 			this.EraseButton.Name = "EraseButton";
-			this.EraseButton.Size = new System.Drawing.Size(75, 75);
+			this.EraseButton.Size = new System.Drawing.Size(60, 60);
 			this.EraseButton.TabIndex = 22;
 			this.EraseButton.Text = "⌫";
 			this.EraseButton.UseVisualStyleBackColor = true;
@@ -264,27 +268,74 @@
 			this.PreviewLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.PreviewLabel.Font = new System.Drawing.Font("Roboto", 20F);
 			this.PreviewLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.PreviewLabel.Location = new System.Drawing.Point(0, -2);
+			this.PreviewLabel.Location = new System.Drawing.Point(0, 1);
 			this.PreviewLabel.Name = "PreviewLabel";
-			this.PreviewLabel.Size = new System.Drawing.Size(316, 50);
+			this.PreviewLabel.Size = new System.Drawing.Size(258, 50);
 			this.PreviewLabel.TabIndex = 23;
 			this.PreviewLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// PointButton
 			// 
 			this.PointButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.PointButton.Location = new System.Drawing.Point(160, 142);
+			this.PointButton.Location = new System.Drawing.Point(132, 140);
 			this.PointButton.Name = "PointButton";
-			this.PointButton.Size = new System.Drawing.Size(75, 75);
+			this.PointButton.Size = new System.Drawing.Size(60, 60);
 			this.PointButton.TabIndex = 24;
 			this.PointButton.Text = ".";
 			this.PointButton.UseVisualStyleBackColor = true;
+			// 
+			// PowerButton
+			// 
+			this.PowerButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.PowerButton.Location = new System.Drawing.Point(198, 140);
+			this.PowerButton.Name = "PowerButton";
+			this.PowerButton.Size = new System.Drawing.Size(60, 60);
+			this.PowerButton.TabIndex = 25;
+			this.PowerButton.Text = "^";
+			this.PowerButton.UseVisualStyleBackColor = true;
+			// 
+			// SquareButton
+			// 
+			this.SquareButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SquareButton.Location = new System.Drawing.Point(0, 206);
+			this.SquareButton.Name = "SquareButton";
+			this.SquareButton.Size = new System.Drawing.Size(60, 60);
+			this.SquareButton.TabIndex = 26;
+			this.SquareButton.Text = "x^2";
+			this.SquareButton.UseVisualStyleBackColor = true;
+			this.SquareButton.Click += new System.EventHandler(this.SquareButton_Click);
+			// 
+			// PlusMinusButton
+			// 
+			this.PlusMinusButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.PlusMinusButton.Location = new System.Drawing.Point(66, 207);
+			this.PlusMinusButton.Name = "PlusMinusButton";
+			this.PlusMinusButton.Size = new System.Drawing.Size(60, 60);
+			this.PlusMinusButton.TabIndex = 27;
+			this.PlusMinusButton.Text = "±x";
+			this.PlusMinusButton.UseVisualStyleBackColor = true;
+			this.PlusMinusButton.Click += new System.EventHandler(this.PlusMinusButton_Click);
+			// 
+			// ReverseDivButton
+			// 
+			this.ReverseDivButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.ReverseDivButton.Location = new System.Drawing.Point(132, 207);
+			this.ReverseDivButton.Name = "ReverseDivButton";
+			this.ReverseDivButton.Size = new System.Drawing.Size(60, 60);
+			this.ReverseDivButton.TabIndex = 28;
+			this.ReverseDivButton.Text = "1/x";
+			this.ReverseDivButton.UseVisualStyleBackColor = true;
+			this.ReverseDivButton.Click += new System.EventHandler(this.ReverseDivButton_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(317, 541);
+			this.ClientSize = new System.Drawing.Size(260, 532);
+			this.Controls.Add(this.ReverseDivButton);
+			this.Controls.Add(this.PlusMinusButton);
+			this.Controls.Add(this.SquareButton);
+			this.Controls.Add(this.PowerButton);
 			this.Controls.Add(this.PointButton);
 			this.Controls.Add(this.PreviewLabel);
 			this.Controls.Add(this.EraseButton);
@@ -337,6 +388,10 @@
 		private System.Windows.Forms.Button EraseButton;
 		private System.Windows.Forms.Label PreviewLabel;
 		private System.Windows.Forms.Button PointButton;
+		private System.Windows.Forms.Button PowerButton;
+		private System.Windows.Forms.Button SquareButton;
+		private System.Windows.Forms.Button PlusMinusButton;
+		private System.Windows.Forms.Button ReverseDivButton;
 	}
 }
 
