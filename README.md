@@ -10,7 +10,7 @@ A smart, pocket-sized calculator application written in C#.
 
 - [x] Add keyboard input.
 - [x] Add last expression entered.
-- [ ] Add advanced functions.
+- [x] Add advanced functions: completed on 07-07-2023.
 - [ ] Add trigonometry.
   - [ ] Add basic functions.
   - [ ] Add inverse functions.
