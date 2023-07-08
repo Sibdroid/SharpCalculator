@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
 {
 	public partial class Form1 : Form
 	{
-		bool is_changed = false;
+		bool isChanged = false;
 		public Form1()
 		{
 			InitializeComponent();
@@ -44,10 +44,10 @@ namespace WindowsFormsApp1
 
 		private void buttonClick(object sender, EventArgs e)
 		{
-			if (!is_changed)
+			if (!isChanged)
 			{
 				ResultLabel.Text = "";
-				is_changed = true;
+				isChanged = true;
 			}
 			System.Windows.Forms.Button button = sender as System.Windows.Forms.Button;
 			string text = button.Text;
@@ -57,7 +57,7 @@ namespace WindowsFormsApp1
 		private void ClearButton_Click(object sender, EventArgs e)
 		{
 			Tools.clear(ResultLabel, PreviewLabel);
-			is_changed = false;
+			isChanged = false;
 		}
 
 		private void ResultButton_Click(object sender, EventArgs e)
@@ -71,8 +71,9 @@ namespace WindowsFormsApp1
 			if (ResultLabel.Text.Length == 0)
 			{
 				ResultLabel.Text = "0";
-				is_changed = false;
+				isChanged = false;
 			}
+			ResultLabel.Text = "";
 		}
 		private void Form1_KeyDown(object sender, KeyEventArgs e)
 		{
@@ -83,6 +84,9 @@ namespace WindowsFormsApp1
 			{
 				switch (text)
 				{
+					case "D8":
+						value = "*";
+						break;
 					case "D9":
 						value = "(";
 						break;
@@ -139,13 +143,13 @@ namespace WindowsFormsApp1
 						if (ResultLabel.Text.Length == 0)
 						{
 							ResultLabel.Text = "0";
-							is_changed = false;
+							isChanged = false;
 							overwriteChange = true;
 						}
 						break;
 					case "C":
 						Tools.clear(ResultLabel, PreviewLabel);
-						is_changed = false;
+						isChanged = false;
 						overwriteChange = true;
 						break;
 					case "Oemplus":
@@ -169,10 +173,10 @@ namespace WindowsFormsApp1
 						break;
 				}
 			}
-			if (!is_changed && !overwriteChange)
+			if (!isChanged && !overwriteChange)
 			{
 				ResultLabel.Text = "";
-				is_changed = true;
+				isChanged = true;
 			}
 			ResultLabel.Text += value;
 			Tools.resizeFont(ResultLabel);
@@ -210,6 +214,7 @@ namespace WindowsFormsApp1
 	}
 	public class Tools
 	{
+		public static float defaultSize = 40.0f;
 		public static void resizeFont(Label label)
 		{
 			var size = default(SizeF);
@@ -229,12 +234,14 @@ namespace WindowsFormsApp1
 		{
 			label.Text = label.Text.Remove(label.Text.Length - 1);
 			resizeFont(label);
+
 		}
 		public static void clear(Label label, Label preview)
 		{
 			label.Text = "0";
 			preview.Text = "";
-			resizeFont(label);
+			var font = new Font(label.Font.Name, label.Font.SizeInPoints);
+			label.Font = new Font(font.Name, defaultSize);
 		}
 		public static void calculateResult(Label label, Label preview)
 		{
