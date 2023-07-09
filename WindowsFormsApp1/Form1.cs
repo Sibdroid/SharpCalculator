@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
 			MulButton.Click += buttonClick;
 			DivButton.Click += buttonClick;
 			PointButton.Click += buttonClick;
+			PowerButton.Click += buttonClick;
 			LeftBracketButton.Click += buttonClick;
 			RightBracketButton.Click += buttonClick;
 		}
@@ -84,6 +85,9 @@ namespace WindowsFormsApp1
 			{
 				switch (text)
 				{
+					case "D6":
+						value = "^";
+						break;
 					case "D8":
 						value = "*";
 						break;
@@ -245,6 +249,11 @@ namespace WindowsFormsApp1
 		}
 		public static void calculateResult(Label label, Label preview)
 		{
+			if (label.Text.Contains("^"))
+			{
+				string[] arguments = label.Text.Split('^');
+				label.Text = $"Pow({arguments[0]}| {arguments[1]})";
+			}
 			label.Text = label.Text.Replace(",", ".");
 			label.Text = label.Text.Replace("|", ",");
 			Expression expression = new Expression(label.Text);
