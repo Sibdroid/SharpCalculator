@@ -206,14 +206,18 @@ namespace WindowsFormsApp1
 
 		private void SquareButton_Click(object sender, EventArgs e)
 		{
-			ResultLabel.Text = $"Pow({ResultLabel.Text}| 2)";
-			Tools.calculateResult(ResultLabel, PreviewLabel);
-			int first = PreviewLabel.Text.IndexOf('(');
-			int last = PreviewLabel.Text.LastIndexOf(')');
-			string arguments = PreviewLabel.Text.Substring(first + 1, last - first - 1);
-			arguments = arguments.Replace(", ", ",");
-			string[] divided = arguments.Split(',');
-			PreviewLabel.Text = $"{divided[0]}^{divided[1]}";
+			// ResultLabel.Text = $"Pow({ResultLabel.Text}| 2)";
+			// Tools.getPowerExpression(ResultLabel, "Pow",
+			// 	                     ResultLabel.Text, "2");
+			// Tools.calculateResult(ResultLabel, PreviewLabel);
+			// int first = PreviewLabel.Text.IndexOf('(');
+			// int last = PreviewLabel.Text.LastIndexOf(')');
+			// string arguments = PreviewLabel.Text.Substring(first + 1, last - first - 1);
+			// arguments = arguments.Replace(", ", ",");
+			// string[] divided = arguments.Split(',');
+			// PreviewLabel.Text = $"{divided[0]}^{divided[1]}";
+			Tools.calculatePower(ResultLabel, PreviewLabel, "Pow",
+								 ResultLabel.Text, "2");
 		}
 	}
 	public class Tools
@@ -246,6 +250,23 @@ namespace WindowsFormsApp1
 			preview.Text = "";
 			var font = new Font(label.Font.Name, label.Font.SizeInPoints);
 			label.Font = new Font(font.Name, defaultSize);
+		}
+		public static void getPowerExpression(Label label, string function,
+			                                  string argument1, string argument2)
+		{
+			label.Text = $"{function}({argument1}| {argument2})";
+		}
+		public static void calculatePower(Label label, Label preview, string function,
+			                              string argument1, string argument2)
+		{
+			label.Text = $"{function}({argument1}| {argument2})";
+			calculateResult(label, preview);
+			int first = preview.Text.IndexOf('(');
+			int last = preview.Text.LastIndexOf(')');
+			string arguments = preview.Text.Substring(first + 1, last - first - 1);
+			arguments = arguments.Replace(", ", ",");
+			string[] divided = arguments.Split(',');
+			preview.Text = $"{divided[0]}^{divided[1]}";
 		}
 		public static void calculateResult(Label label, Label preview)
 		{
