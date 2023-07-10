@@ -249,15 +249,22 @@ namespace WindowsFormsApp1
 		}
 		public static void calculateResult(Label label, Label preview)
 		{
+			bool changedPreview = false;
 			if (label.Text.Contains("^"))
 			{
 				string[] arguments = label.Text.Split('^');
 				label.Text = $"Pow({arguments[0]}| {arguments[1]})";
+				preview.Text = $"{arguments[0]}^{arguments[1]}";
+				changedPreview = true;
 			}
 			label.Text = label.Text.Replace(",", ".");
 			label.Text = label.Text.Replace("|", ",");
 			Expression expression = new Expression(label.Text);
-			preview.Text = label.Text;
+			if (!changedPreview)
+			{
+				preview.Text = label.Text;
+			}
+	
 			try
 			{
 				label.Text = Convert.ToString(expression.Evaluate());
