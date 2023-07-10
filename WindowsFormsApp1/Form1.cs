@@ -206,18 +206,22 @@ namespace WindowsFormsApp1
 
 		private void SquareButton_Click(object sender, EventArgs e)
 		{
-			// ResultLabel.Text = $"Pow({ResultLabel.Text}| 2)";
-			// Tools.getPowerExpression(ResultLabel, "Pow",
-			// 	                     ResultLabel.Text, "2");
-			// Tools.calculateResult(ResultLabel, PreviewLabel);
-			// int first = PreviewLabel.Text.IndexOf('(');
-			// int last = PreviewLabel.Text.LastIndexOf(')');
-			// string arguments = PreviewLabel.Text.Substring(first + 1, last - first - 1);
-			// arguments = arguments.Replace(", ", ",");
-			// string[] divided = arguments.Split(',');
-			// PreviewLabel.Text = $"{divided[0]}^{divided[1]}";
-			Tools.calculatePower(ResultLabel, PreviewLabel, "Pow",
-								 ResultLabel.Text, "2");
+			Tools.calculatePower(ResultLabel, PreviewLabel, ResultLabel.Text, "2");
+		}
+
+		private void TenPowerButton_Click(object sender, EventArgs e)
+		{
+			Tools.calculatePower(ResultLabel, PreviewLabel, "10", ResultLabel.Text);
+		}
+
+		private void CubeButton_Click(object sender, EventArgs e)
+		{
+			Tools.calculatePower(ResultLabel, PreviewLabel, ResultLabel.Text, "3");
+		}
+
+		private void TwoPowerButton_Click(object sender, EventArgs e)
+		{
+			Tools.calculatePower(ResultLabel, PreviewLabel, "2", ResultLabel.Text);
 		}
 	}
 	public class Tools
@@ -256,10 +260,9 @@ namespace WindowsFormsApp1
 		{
 			label.Text = $"{function}({argument1}| {argument2})";
 		}
-		public static void calculatePower(Label label, Label preview, string function,
-			                              string argument1, string argument2)
+		public static void calculatePower(Label label, Label preview, string argument1, string argument2)
 		{
-			label.Text = $"{function}({argument1}| {argument2})";
+			label.Text = $"Pow({argument1}| {argument2})";
 			calculateResult(label, preview);
 			int first = preview.Text.IndexOf('(');
 			int last = preview.Text.LastIndexOf(')');
