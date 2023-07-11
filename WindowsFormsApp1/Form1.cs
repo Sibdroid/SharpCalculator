@@ -41,6 +41,11 @@ namespace WindowsFormsApp1
 			PowerButton.Click += buttonClick;
 			LeftBracketButton.Click += buttonClick;
 			RightBracketButton.Click += buttonClick;
+			RootButton.Click += funcButtonClick;
+			SquareButton.Click += funcButtonClick;
+			CubeButton.Click += funcButtonClick;
+			PowerTwoButton.Click += funcButtonClick;
+			PowerTenButton.Click += funcButtonClick;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -54,6 +59,40 @@ namespace WindowsFormsApp1
 			string text = button.Text;
 			ResultLabel.Text += text;
 			Tools.resizeFont(ResultLabel);
+		}
+		private void funcButtonClick(object sender, EventArgs e)
+		{
+			System.Windows.Forms.Button button = sender as System.Windows.Forms.Button;
+			string name = button.Name;
+			string argument1 = "";
+			string argument2 = "";
+			string function = "Pow";
+			switch (name)
+			{
+				case "RootButton":
+					argument1 = ResultLabel.Text;
+					argument2 = "0.5";
+					break;
+				case "SquareButton":
+					argument1 = ResultLabel.Text;
+					argument2 = "2";
+					break;
+				case "CubeButton":
+					argument1 = ResultLabel.Text;
+					argument2 = "3";
+					break;
+				case "TwoPowerButton":
+					argument1 = "2";
+					argument2 = ResultLabel.Text;
+					break;
+				case "TenPowerButton":
+					argument1 = "2";
+					argument2 = ResultLabel.Text;
+					break;
+
+			}
+			Tools.calculateFunc(ResultLabel, PreviewLabel, function, argument1, argument2);	
+
 		}
 		private void ClearButton_Click(object sender, EventArgs e)
 		{
@@ -204,24 +243,19 @@ namespace WindowsFormsApp1
 			Tools.calculateResult(ResultLabel, PreviewLabel);
 		}
 
-		private void SquareButton_Click(object sender, EventArgs e)
-		{
-			Tools.calculatePower(ResultLabel, PreviewLabel, ResultLabel.Text, "2");
-		}
-
 		private void TenPowerButton_Click(object sender, EventArgs e)
 		{
-			Tools.calculatePower(ResultLabel, PreviewLabel, "10", ResultLabel.Text);
+			Tools.calculateFunc(ResultLabel, PreviewLabel, "Pow", "10", ResultLabel.Text);
 		}
 
 		private void CubeButton_Click(object sender, EventArgs e)
 		{
-			Tools.calculatePower(ResultLabel, PreviewLabel, ResultLabel.Text, "3");
+			Tools.calculateFunc(ResultLabel, PreviewLabel, "Pow", ResultLabel.Text, "3");
 		}
 
 		private void TwoPowerButton_Click(object sender, EventArgs e)
 		{
-			Tools.calculatePower(ResultLabel, PreviewLabel, "2", ResultLabel.Text);
+			Tools.calculateFunc(ResultLabel, PreviewLabel, "Pow", "2", ResultLabel.Text);
 		}
 	}
 	public class Tools
@@ -260,9 +294,10 @@ namespace WindowsFormsApp1
 		{
 			label.Text = $"{function}({argument1}| {argument2})";
 		}
-		public static void calculatePower(Label label, Label preview, string argument1, string argument2)
+		public static void calculateFunc(Label label, Label preview, string function, 
+			                             string argument1, string argument2)
 		{
-			label.Text = $"Pow({argument1}| {argument2})";
+			label.Text = $"{function}({argument1}| {argument2})";
 			calculateResult(label, preview);
 			int first = preview.Text.IndexOf('(');
 			int last = preview.Text.LastIndexOf(')');

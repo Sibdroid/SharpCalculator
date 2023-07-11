@@ -51,12 +51,13 @@
 			this.PreviewLabel = new System.Windows.Forms.Label();
 			this.PointButton = new System.Windows.Forms.Button();
 			this.PowerButton = new System.Windows.Forms.Button();
-			this.SquareButton = new System.Windows.Forms.Button();
 			this.PlusMinusButton = new System.Windows.Forms.Button();
 			this.ReverseDivButton = new System.Windows.Forms.Button();
-			this.TenPowerButton = new System.Windows.Forms.Button();
+			this.RootButton = new System.Windows.Forms.Button();
+			this.SquareButton = new System.Windows.Forms.Button();
 			this.CubeButton = new System.Windows.Forms.Button();
-			this.TwoPowerButton = new System.Windows.Forms.Button();
+			this.PowerTenButton = new System.Windows.Forms.Button();
+			this.PowerTwoButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// NumButton7
@@ -297,17 +298,6 @@
 			this.PowerButton.Text = "^";
 			this.PowerButton.UseVisualStyleBackColor = true;
 			// 
-			// SquareButton
-			// 
-			this.SquareButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.SquareButton.Location = new System.Drawing.Point(0, 206);
-			this.SquareButton.Name = "SquareButton";
-			this.SquareButton.Size = new System.Drawing.Size(60, 60);
-			this.SquareButton.TabIndex = 26;
-			this.SquareButton.Text = "x^2";
-			this.SquareButton.UseVisualStyleBackColor = true;
-			this.SquareButton.Click += new System.EventHandler(this.SquareButton_Click);
-			// 
 			// PlusMinusButton
 			// 
 			this.PlusMinusButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -330,16 +320,25 @@
 			this.ReverseDivButton.UseVisualStyleBackColor = true;
 			this.ReverseDivButton.Click += new System.EventHandler(this.ReverseDivButton_Click);
 			// 
-			// TenPowerButton
+			// RootButton
 			// 
-			this.TenPowerButton.Font = new System.Drawing.Font("Roboto", 18F);
-			this.TenPowerButton.Location = new System.Drawing.Point(264, 340);
-			this.TenPowerButton.Name = "TenPowerButton";
-			this.TenPowerButton.Size = new System.Drawing.Size(72, 60);
-			this.TenPowerButton.TabIndex = 29;
-			this.TenPowerButton.Text = "10^x";
-			this.TenPowerButton.UseVisualStyleBackColor = true;
-			this.TenPowerButton.Click += new System.EventHandler(this.TenPowerButton_Click);
+			this.RootButton.Font = new System.Drawing.Font("Roboto", 18F);
+			this.RootButton.Location = new System.Drawing.Point(264, 140);
+			this.RootButton.Name = "RootButton";
+			this.RootButton.Size = new System.Drawing.Size(72, 60);
+			this.RootButton.TabIndex = 32;
+			this.RootButton.Text = "√x";
+			this.RootButton.UseVisualStyleBackColor = true;
+			// 
+			// SquareButton
+			// 
+			this.SquareButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SquareButton.Location = new System.Drawing.Point(0, 208);
+			this.SquareButton.Name = "SquareButton";
+			this.SquareButton.Size = new System.Drawing.Size(60, 60);
+			this.SquareButton.TabIndex = 33;
+			this.SquareButton.Text = "x^2";
+			this.SquareButton.UseVisualStyleBackColor = true;
 			// 
 			// CubeButton
 			// 
@@ -347,21 +346,29 @@
 			this.CubeButton.Location = new System.Drawing.Point(264, 206);
 			this.CubeButton.Name = "CubeButton";
 			this.CubeButton.Size = new System.Drawing.Size(72, 60);
-			this.CubeButton.TabIndex = 30;
+			this.CubeButton.TabIndex = 34;
 			this.CubeButton.Text = "x^3";
 			this.CubeButton.UseVisualStyleBackColor = true;
-			this.CubeButton.Click += new System.EventHandler(this.CubeButton_Click);
 			// 
-			// TwoPowerButton
+			// PowerTenButton
 			// 
-			this.TwoPowerButton.Font = new System.Drawing.Font("Roboto", 18F);
-			this.TwoPowerButton.Location = new System.Drawing.Point(264, 274);
-			this.TwoPowerButton.Name = "TwoPowerButton";
-			this.TwoPowerButton.Size = new System.Drawing.Size(72, 60);
-			this.TwoPowerButton.TabIndex = 31;
-			this.TwoPowerButton.Text = "2^x";
-			this.TwoPowerButton.UseVisualStyleBackColor = true;
-			this.TwoPowerButton.Click += new System.EventHandler(this.TwoPowerButton_Click);
+			this.PowerTenButton.Font = new System.Drawing.Font("Roboto", 18F);
+			this.PowerTenButton.Location = new System.Drawing.Point(264, 339);
+			this.PowerTenButton.Name = "PowerTenButton";
+			this.PowerTenButton.Size = new System.Drawing.Size(72, 60);
+			this.PowerTenButton.TabIndex = 35;
+			this.PowerTenButton.Text = "10^x";
+			this.PowerTenButton.UseVisualStyleBackColor = true;
+			// 
+			// PowerTwoButton
+			// 
+			this.PowerTwoButton.Font = new System.Drawing.Font("Roboto", 18F);
+			this.PowerTwoButton.Location = new System.Drawing.Point(264, 274);
+			this.PowerTwoButton.Name = "PowerTwoButton";
+			this.PowerTwoButton.Size = new System.Drawing.Size(72, 60);
+			this.PowerTwoButton.TabIndex = 36;
+			this.PowerTwoButton.Text = "2^x";
+			this.PowerTwoButton.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -369,12 +376,13 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(336, 532);
-			this.Controls.Add(this.TwoPowerButton);
+			this.Controls.Add(this.PowerTwoButton);
+			this.Controls.Add(this.PowerTenButton);
 			this.Controls.Add(this.CubeButton);
-			this.Controls.Add(this.TenPowerButton);
+			this.Controls.Add(this.SquareButton);
+			this.Controls.Add(this.RootButton);
 			this.Controls.Add(this.ReverseDivButton);
 			this.Controls.Add(this.PlusMinusButton);
-			this.Controls.Add(this.SquareButton);
 			this.Controls.Add(this.PowerButton);
 			this.Controls.Add(this.PointButton);
 			this.Controls.Add(this.PreviewLabel);
@@ -429,12 +437,13 @@
 		private System.Windows.Forms.Label PreviewLabel;
 		private System.Windows.Forms.Button PointButton;
 		private System.Windows.Forms.Button PowerButton;
-		private System.Windows.Forms.Button SquareButton;
 		private System.Windows.Forms.Button PlusMinusButton;
 		private System.Windows.Forms.Button ReverseDivButton;
-		private System.Windows.Forms.Button TenPowerButton;
+		private System.Windows.Forms.Button RootButton;
+		private System.Windows.Forms.Button SquareButton;
 		private System.Windows.Forms.Button CubeButton;
-		private System.Windows.Forms.Button TwoPowerButton;
+		private System.Windows.Forms.Button PowerTenButton;
+		private System.Windows.Forms.Button PowerTwoButton;
 	}
 }
 
