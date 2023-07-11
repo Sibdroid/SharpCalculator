@@ -56,8 +56,9 @@
 			this.RootButton = new System.Windows.Forms.Button();
 			this.SquareButton = new System.Windows.Forms.Button();
 			this.CubeButton = new System.Windows.Forms.Button();
-			this.PowerTenButton = new System.Windows.Forms.Button();
-			this.PowerTwoButton = new System.Windows.Forms.Button();
+			this.TenPowerButton = new System.Windows.Forms.Button();
+			this.TwoPowerButton = new System.Windows.Forms.Button();
+			this.toggleSwitch1 = new WindowsFormsApp1.ToggleSwitch();
 			this.SuspendLayout();
 			// 
 			// NumButton7
@@ -350,34 +351,46 @@
 			this.CubeButton.Text = "x^3";
 			this.CubeButton.UseVisualStyleBackColor = true;
 			// 
-			// PowerTenButton
+			// TenPowerButton
 			// 
-			this.PowerTenButton.Font = new System.Drawing.Font("Roboto", 18F);
-			this.PowerTenButton.Location = new System.Drawing.Point(264, 339);
-			this.PowerTenButton.Name = "PowerTenButton";
-			this.PowerTenButton.Size = new System.Drawing.Size(72, 60);
-			this.PowerTenButton.TabIndex = 35;
-			this.PowerTenButton.Text = "10^x";
-			this.PowerTenButton.UseVisualStyleBackColor = true;
+			this.TenPowerButton.Font = new System.Drawing.Font("Roboto", 18F);
+			this.TenPowerButton.Location = new System.Drawing.Point(264, 339);
+			this.TenPowerButton.Name = "TenPowerButton";
+			this.TenPowerButton.Size = new System.Drawing.Size(72, 60);
+			this.TenPowerButton.TabIndex = 35;
+			this.TenPowerButton.Text = "10^x";
+			this.TenPowerButton.UseVisualStyleBackColor = true;
 			// 
-			// PowerTwoButton
+			// TwoPowerButton
 			// 
-			this.PowerTwoButton.Font = new System.Drawing.Font("Roboto", 18F);
-			this.PowerTwoButton.Location = new System.Drawing.Point(264, 274);
-			this.PowerTwoButton.Name = "PowerTwoButton";
-			this.PowerTwoButton.Size = new System.Drawing.Size(72, 60);
-			this.PowerTwoButton.TabIndex = 36;
-			this.PowerTwoButton.Text = "2^x";
-			this.PowerTwoButton.UseVisualStyleBackColor = true;
+			this.TwoPowerButton.Font = new System.Drawing.Font("Roboto", 18F);
+			this.TwoPowerButton.Location = new System.Drawing.Point(264, 274);
+			this.TwoPowerButton.Name = "TwoPowerButton";
+			this.TwoPowerButton.Size = new System.Drawing.Size(72, 60);
+			this.TwoPowerButton.TabIndex = 36;
+			this.TwoPowerButton.Text = "2^x";
+			this.TwoPowerButton.UseVisualStyleBackColor = true;
+			// 
+			// toggleSwitch1
+			// 
+			this.toggleSwitch1.AutoSize = true;
+			this.toggleSwitch1.Location = new System.Drawing.Point(0, 547);
+			this.toggleSwitch1.Name = "toggleSwitch1";
+			this.toggleSwitch1.Padding = new System.Windows.Forms.Padding(6);
+			this.toggleSwitch1.Size = new System.Drawing.Size(105, 29);
+			this.toggleSwitch1.TabIndex = 37;
+			this.toggleSwitch1.Text = "toggleSwitch1";
+			this.toggleSwitch1.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(336, 532);
-			this.Controls.Add(this.PowerTwoButton);
-			this.Controls.Add(this.PowerTenButton);
+			this.ClientSize = new System.Drawing.Size(336, 588);
+			this.Controls.Add(this.toggleSwitch1);
+			this.Controls.Add(this.TwoPowerButton);
+			this.Controls.Add(this.TenPowerButton);
 			this.Controls.Add(this.CubeButton);
 			this.Controls.Add(this.SquareButton);
 			this.Controls.Add(this.RootButton);
@@ -409,6 +422,7 @@
 			this.Name = "Form1";
 			this.Text = "  ";
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -442,8 +456,9 @@
 		private System.Windows.Forms.Button RootButton;
 		private System.Windows.Forms.Button SquareButton;
 		private System.Windows.Forms.Button CubeButton;
-		private System.Windows.Forms.Button PowerTenButton;
-		private System.Windows.Forms.Button PowerTwoButton;
+		private System.Windows.Forms.Button TenPowerButton;
+		private System.Windows.Forms.Button TwoPowerButton;
+		private ToggleSwitch toggleSwitch1;
 	}
 }
 

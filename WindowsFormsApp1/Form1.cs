@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -44,8 +45,8 @@ namespace WindowsFormsApp1
 			RootButton.Click += funcButtonClick;
 			SquareButton.Click += funcButtonClick;
 			CubeButton.Click += funcButtonClick;
-			PowerTwoButton.Click += funcButtonClick;
-			PowerTenButton.Click += funcButtonClick;
+			TwoPowerButton.Click += funcButtonClick;
+			TenPowerButton.Click += funcButtonClick;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -86,7 +87,7 @@ namespace WindowsFormsApp1
 					argument2 = ResultLabel.Text;
 					break;
 				case "TenPowerButton":
-					argument1 = "2";
+					argument1 = "10";
 					argument2 = ResultLabel.Text;
 					break;
 
@@ -242,20 +243,31 @@ namespace WindowsFormsApp1
 			ResultLabel.Text = "1/" + ResultLabel.Text;
 			Tools.calculateResult(ResultLabel, PreviewLabel);
 		}
-
-		private void TenPowerButton_Click(object sender, EventArgs e)
+	}
+	public class ToggleSwitch : CheckBox
+	{
+		public ToggleSwitch()
 		{
-			Tools.calculateFunc(ResultLabel, PreviewLabel, "Pow", "10", ResultLabel.Text);
+			SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+			Padding = new Padding(6);
 		}
-
-		private void CubeButton_Click(object sender, EventArgs e)
+		protected override void OnPaint(PaintEventArgs e)
 		{
-			Tools.calculateFunc(ResultLabel, PreviewLabel, "Pow", ResultLabel.Text, "3");
-		}
-
-		private void TwoPowerButton_Click(object sender, EventArgs e)
-		{
-			Tools.calculateFunc(ResultLabel, PreviewLabel, "Pow", "2", ResultLabel.Text);
+			this.OnPaintBackground(e);
+			e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+			using (var path = new GraphicsPath())
+			{
+				var d = Padding.All;
+				var r = this.Height - 2 * d;
+				path.AddArc(d, d, r, r, 90, 180);
+				path.AddArc(this.Width - r - d, d, r, r, -90, 180);
+				path.CloseFigure();
+				e.Graphics.FillPath(Checked ? Brushes.DarkGray : Brushes.LightGray, path);
+				r = Height - 1;
+				var rect = Checked ? new Rectangle(Width - r - 1, 0, r, r)
+								   : new Rectangle(0, 0, r, r);
+				e.Graphics.FillEllipse(Checked ? Brushes.Crimson : Brushes.WhiteSmoke, rect);
+			}
 		}
 	}
 	public class Tools
@@ -298,6 +310,7 @@ namespace WindowsFormsApp1
 			                             string argument1, string argument2)
 		{
 			label.Text = $"{function}({argument1}| {argument2})";
+			Console.WriteLine(label.Text);
 			calculateResult(label, preview);
 			int first = preview.Text.IndexOf('(');
 			int last = preview.Text.LastIndexOf(')');
