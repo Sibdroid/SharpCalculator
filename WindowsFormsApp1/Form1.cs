@@ -47,6 +47,7 @@ namespace WindowsFormsApp1
 			CubeButton.Click += funcButtonClick;
 			TwoPowerButton.Click += funcButtonClick;
 			TenPowerButton.Click += funcButtonClick;
+			AdvancedSwitch.CheckedChanged += changeForm;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -243,6 +244,22 @@ namespace WindowsFormsApp1
 			ResultLabel.Text = "1/" + ResultLabel.Text;
 			Tools.calculateResult(ResultLabel, PreviewLabel);
 		}
+		private void changeForm(object sender, EventArgs e)
+		{
+			if (AdvancedSwitch.Checked)
+			{
+				this.Size = new Size(355, 630);
+				ResultLabel.Size = new Size(336, 85);
+				PreviewLabel.Size = new Size(336, 50);
+			}
+			else
+			{
+				this.Size = new Size(275, 630);
+				ResultLabel.Size = new Size(258, 85);
+				PreviewLabel.Size = new Size(258, 50);
+			}
+		}
+
 	}
 	public class ToggleSwitch : CheckBox
 	{
@@ -261,12 +278,12 @@ namespace WindowsFormsApp1
 				var r = this.Height - 2 * d;
 				path.AddArc(d, d, r, r, 90, 180);
 				path.AddArc(this.Width - r - d, d, r, r, -90, 180);
-				path.CloseFigure();
 				e.Graphics.FillPath(Checked ? Brushes.DarkGray : Brushes.LightGray, path);
 				r = Height - 1;
 				var rect = Checked ? new Rectangle(Width - r - 1, 0, r, r)
 								   : new Rectangle(0, 0, r, r);
-				e.Graphics.FillEllipse(Checked ? Brushes.Crimson : Brushes.WhiteSmoke, rect);
+				e.Graphics.FillEllipse(Checked ? Brushes.Crimson : Brushes.DarkGray, rect);
+
 			}
 		}
 	}

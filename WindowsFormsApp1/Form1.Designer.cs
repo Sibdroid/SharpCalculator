@@ -58,7 +58,7 @@
 			this.CubeButton = new System.Windows.Forms.Button();
 			this.TenPowerButton = new System.Windows.Forms.Button();
 			this.TwoPowerButton = new System.Windows.Forms.Button();
-			this.toggleSwitch1 = new WindowsFormsApp1.ToggleSwitch();
+			this.AdvancedSwitch = new WindowsFormsApp1.ToggleSwitch();
 			this.SuspendLayout();
 			// 
 			// NumButton7
@@ -371,24 +371,23 @@
 			this.TwoPowerButton.Text = "2^x";
 			this.TwoPowerButton.UseVisualStyleBackColor = true;
 			// 
-			// toggleSwitch1
+			// AdvancedSwitch
 			// 
-			this.toggleSwitch1.AutoSize = true;
-			this.toggleSwitch1.Location = new System.Drawing.Point(0, 547);
-			this.toggleSwitch1.Name = "toggleSwitch1";
-			this.toggleSwitch1.Padding = new System.Windows.Forms.Padding(6);
-			this.toggleSwitch1.Size = new System.Drawing.Size(105, 29);
-			this.toggleSwitch1.TabIndex = 37;
-			this.toggleSwitch1.Text = "toggleSwitch1";
-			this.toggleSwitch1.UseVisualStyleBackColor = true;
+			this.AdvancedSwitch.Location = new System.Drawing.Point(0, 537);
+			this.AdvancedSwitch.Name = "AdvancedSwitch";
+			this.AdvancedSwitch.Padding = new System.Windows.Forms.Padding(6);
+			this.AdvancedSwitch.Size = new System.Drawing.Size(126, 48);
+			this.AdvancedSwitch.TabIndex = 37;
+			this.AdvancedSwitch.Text = "AdvancedSwitch";
+			this.AdvancedSwitch.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(336, 588);
-			this.Controls.Add(this.toggleSwitch1);
+			this.ClientSize = new System.Drawing.Size(259, 591);
+			this.Controls.Add(this.AdvancedSwitch);
 			this.Controls.Add(this.TwoPowerButton);
 			this.Controls.Add(this.TenPowerButton);
 			this.Controls.Add(this.CubeButton);
@@ -422,7 +421,6 @@
 			this.Name = "Form1";
 			this.Text = "  ";
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -458,7 +456,7 @@
 		private System.Windows.Forms.Button CubeButton;
 		private System.Windows.Forms.Button TenPowerButton;
 		private System.Windows.Forms.Button TwoPowerButton;
-		private ToggleSwitch toggleSwitch1;
+		private ToggleSwitch AdvancedSwitch;
 	}
 }
 
