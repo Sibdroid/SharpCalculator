@@ -10,9 +10,10 @@ A smart, pocket-sized calculator application written in C#.
 
 - [x] Add keyboard input.
 - [x] Add last expression entered.
-- [ ] Add advanced functions.
+- [x] Add advanced functions.
   - [x] Add square, reverse division and sign change: completed on 07-07-2023.
-  - [ ] Add power functions. 
+  - [x] Add power functions: completed on 12-07-2023.
+- [ ] Add dark mode.
 - [ ] Add trigonometry.
   - [ ] Add basic functions.
   - [ ] Add inverse functions.
