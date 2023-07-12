@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -41,6 +42,12 @@ namespace WindowsFormsApp1
 			PowerButton.Click += buttonClick;
 			LeftBracketButton.Click += buttonClick;
 			RightBracketButton.Click += buttonClick;
+			RootButton.Click += funcButtonClick;
+			SquareButton.Click += funcButtonClick;
+			CubeButton.Click += funcButtonClick;
+			TwoPowerButton.Click += funcButtonClick;
+			TenPowerButton.Click += funcButtonClick;
+			AdvancedSwitch.CheckedChanged += changeForm;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -54,6 +61,40 @@ namespace WindowsFormsApp1
 			string text = button.Text;
 			ResultLabel.Text += text;
 			Tools.resizeFont(ResultLabel);
+		}
+		private void funcButtonClick(object sender, EventArgs e)
+		{
+			System.Windows.Forms.Button button = sender as System.Windows.Forms.Button;
+			string name = button.Name;
+			string argument1 = "";
+			string argument2 = "";
+			string function = "Pow";
+			switch (name)
+			{
+				case "RootButton":
+					argument1 = ResultLabel.Text;
+					argument2 = "0.5";
+					break;
+				case "SquareButton":
+					argument1 = ResultLabel.Text;
+					argument2 = "2";
+					break;
+				case "CubeButton":
+					argument1 = ResultLabel.Text;
+					argument2 = "3";
+					break;
+				case "TwoPowerButton":
+					argument1 = "2";
+					argument2 = ResultLabel.Text;
+					break;
+				case "TenPowerButton":
+					argument1 = "10";
+					argument2 = ResultLabel.Text;
+					break;
+
+			}
+			Tools.calculateFunc(ResultLabel, PreviewLabel, function, argument1, argument2);	
+
 		}
 		private void ClearButton_Click(object sender, EventArgs e)
 		{
@@ -203,17 +244,47 @@ namespace WindowsFormsApp1
 			ResultLabel.Text = "1/" + ResultLabel.Text;
 			Tools.calculateResult(ResultLabel, PreviewLabel);
 		}
-
-		private void SquareButton_Click(object sender, EventArgs e)
+		private void changeForm(object sender, EventArgs e)
 		{
-			ResultLabel.Text = $"Pow({ResultLabel.Text}| 2)";
-			Tools.calculateResult(ResultLabel, PreviewLabel);
-			int first = PreviewLabel.Text.IndexOf('(');
-			int last = PreviewLabel.Text.LastIndexOf(')');
-			string arguments = PreviewLabel.Text.Substring(first + 1, last - first - 1);
-			arguments = arguments.Replace(", ", ",");
-			string[] divided = arguments.Split(',');
-			PreviewLabel.Text = $"{divided[0]}^{divided[1]}";
+			if (AdvancedSwitch.Checked)
+			{
+				this.Size = new Size(355, 630);
+				ResultLabel.Size = new Size(336, 85);
+				PreviewLabel.Size = new Size(336, 50);
+			}
+			else
+			{
+				this.Size = new Size(275, 630);
+				ResultLabel.Size = new Size(258, 85);
+				PreviewLabel.Size = new Size(258, 50);
+			}
+		}
+
+	}
+	public class ToggleSwitch : CheckBox
+	{
+		public ToggleSwitch()
+		{
+			SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
+			Padding = new Padding(6);
+		}
+		protected override void OnPaint(PaintEventArgs e)
+		{
+			this.OnPaintBackground(e);
+			e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+			using (var path = new GraphicsPath())
+			{
+				var d = Padding.All;
+				var r = this.Height - 2 * d;
+				path.AddArc(d, d, r, r, 90, 180);
+				path.AddArc(this.Width - r - d, d, r, r, -90, 180);
+				e.Graphics.FillPath(Checked ? Brushes.DarkGray : Brushes.LightGray, path);
+				r = Height - 1;
+				var rect = Checked ? new Rectangle(Width - r - 1, 0, r, r)
+								   : new Rectangle(0, 0, r, r);
+				e.Graphics.FillEllipse(Checked ? Brushes.Crimson : Brushes.DarkGray, rect);
+
+			}
 		}
 	}
 	public class Tools
@@ -247,17 +318,42 @@ namespace WindowsFormsApp1
 			var font = new Font(label.Font.Name, label.Font.SizeInPoints);
 			label.Font = new Font(font.Name, defaultSize);
 		}
+		public static void getPowerExpression(Label label, string function,
+			                                  string argument1, string argument2)
+		{
+			label.Text = $"{function}({argument1}| {argument2})";
+		}
+		public static void calculateFunc(Label label, Label preview, string function, 
+			                             string argument1, string argument2)
+		{
+			label.Text = $"{function}({argument1}| {argument2})";
+			Console.WriteLine(label.Text);
+			calculateResult(label, preview);
+			int first = preview.Text.IndexOf('(');
+			int last = preview.Text.LastIndexOf(')');
+			string arguments = preview.Text.Substring(first + 1, last - first - 1);
+			arguments = arguments.Replace(", ", ",");
+			string[] divided = arguments.Split(',');
+			preview.Text = $"{divided[0]}^{divided[1]}";
+		}
 		public static void calculateResult(Label label, Label preview)
 		{
+			bool changedPreview = false;
 			if (label.Text.Contains("^"))
 			{
 				string[] arguments = label.Text.Split('^');
 				label.Text = $"Pow({arguments[0]}| {arguments[1]})";
+				preview.Text = $"{arguments[0]}^{arguments[1]}";
+				changedPreview = true;
 			}
 			label.Text = label.Text.Replace(",", ".");
 			label.Text = label.Text.Replace("|", ",");
 			Expression expression = new Expression(label.Text);
-			preview.Text = label.Text;
+			if (!changedPreview)
+			{
+				preview.Text = label.Text;
+			}
+	
 			try
 			{
 				label.Text = Convert.ToString(expression.Evaluate());
