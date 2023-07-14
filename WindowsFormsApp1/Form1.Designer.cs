@@ -59,6 +59,7 @@
 			this.TenPowerButton = new System.Windows.Forms.Button();
 			this.TwoPowerButton = new System.Windows.Forms.Button();
 			this.AdvancedSwitch = new WindowsFormsApp1.ToggleSwitch();
+			this.DarkSwitch = new WindowsFormsApp1.ToggleSwitch();
 			this.SuspendLayout();
 			// 
 			// NumButton7
@@ -395,12 +396,23 @@
 			this.AdvancedSwitch.Text = "AdvancedSwitch";
 			this.AdvancedSwitch.UseVisualStyleBackColor = true;
 			// 
+			// DarkSwitch
+			// 
+			this.DarkSwitch.Location = new System.Drawing.Point(132, 537);
+			this.DarkSwitch.Name = "DarkSwitch";
+			this.DarkSwitch.Padding = new System.Windows.Forms.Padding(6);
+			this.DarkSwitch.Size = new System.Drawing.Size(126, 48);
+			this.DarkSwitch.TabIndex = 38;
+			this.DarkSwitch.Text = "DarkSwitch";
+			this.DarkSwitch.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(339, 591);
+			this.ClientSize = new System.Drawing.Size(259, 588);
+			this.Controls.Add(this.DarkSwitch);
 			this.Controls.Add(this.AdvancedSwitch);
 			this.Controls.Add(this.TwoPowerButton);
 			this.Controls.Add(this.TenPowerButton);
@@ -471,6 +483,7 @@
 		private System.Windows.Forms.Button TenPowerButton;
 		private System.Windows.Forms.Button TwoPowerButton;
 		private ToggleSwitch AdvancedSwitch;
+		private ToggleSwitch DarkSwitch;
 	}
 }
 

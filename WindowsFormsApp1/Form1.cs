@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
 			TwoPowerButton.Click += funcButtonClick;
 			TenPowerButton.Click += funcButtonClick;
 			AdvancedSwitch.CheckedChanged += changeForm;
+			DarkSwitch.CheckedChanged += darkMode;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -259,6 +260,48 @@ namespace WindowsFormsApp1
 				PreviewLabel.Size = new Size(258, 50);
 			}
 		}
+		private void darkMode(object sender, EventArgs e)
+		{
+			foreach (var button in this.Controls.OfType<System.Windows.Forms.Button>())
+			{
+				if (button.FlatStyle.ToString() == "Flat")
+				{
+					if (DarkSwitch.Checked)
+					{
+						button.BackColor = ColorTranslator.FromHtml("#0d3370");
+						button.ForeColor = Color.White;
+					}
+					else
+					{
+						button.BackColor = ColorTranslator.FromHtml("#f2cc8f");
+						button.ForeColor = Color.Black;
+					}
+				}
+				else
+				{
+					if (DarkSwitch.Checked)
+					{
+						button.BackColor = ColorTranslator.FromHtml("#1e1e1e");
+						button.ForeColor = Color.White;
+					}
+					else
+					{
+						button.BackColor = ColorTranslator.FromHtml("#e1e1e1");
+						button.ForeColor = Color.Black;
+					}
+				}
+			}
+			if (DarkSwitch.Checked)
+			{
+				this.BackColor = ColorTranslator.FromHtml("#0f0f0f");
+				ResultLabel.ForeColor = Color.White;
+			}
+			else
+			{
+				this.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+				ResultLabel.ForeColor = Color.Black;
+			}
+		}
 
 	}
 	public class ToggleSwitch : CheckBox
@@ -284,7 +327,6 @@ namespace WindowsFormsApp1
 								   : new Rectangle(0, 0, r, r);
 				var redBrush = new SolidBrush(Color.FromArgb(255, (byte)255, (byte)81, (byte)84));
 				e.Graphics.FillEllipse(Checked ? Brushes.Crimson : Brushes.DarkGray, rect);
-
 			}
 		}
 	}
