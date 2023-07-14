@@ -282,6 +282,7 @@ namespace WindowsFormsApp1
 				r = Height - 1;
 				var rect = Checked ? new Rectangle(Width - r - 1, 0, r, r)
 								   : new Rectangle(0, 0, r, r);
+				var redBrush = new SolidBrush(Color.FromArgb(255, (byte)255, (byte)81, (byte)84));
 				e.Graphics.FillEllipse(Checked ? Brushes.Crimson : Brushes.DarkGray, rect);
 
 			}

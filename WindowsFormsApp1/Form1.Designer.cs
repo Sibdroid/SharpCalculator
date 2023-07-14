@@ -301,75 +301,89 @@
 			// 
 			// PlusMinusButton
 			// 
+			this.PlusMinusButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.PlusMinusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.PlusMinusButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.PlusMinusButton.Location = new System.Drawing.Point(66, 207);
 			this.PlusMinusButton.Name = "PlusMinusButton";
 			this.PlusMinusButton.Size = new System.Drawing.Size(60, 60);
 			this.PlusMinusButton.TabIndex = 27;
 			this.PlusMinusButton.Text = "±x";
-			this.PlusMinusButton.UseVisualStyleBackColor = true;
+			this.PlusMinusButton.UseVisualStyleBackColor = false;
 			this.PlusMinusButton.Click += new System.EventHandler(this.PlusMinusButton_Click);
 			// 
 			// ReverseDivButton
 			// 
+			this.ReverseDivButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.ReverseDivButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.ReverseDivButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.ReverseDivButton.Location = new System.Drawing.Point(132, 207);
 			this.ReverseDivButton.Name = "ReverseDivButton";
 			this.ReverseDivButton.Size = new System.Drawing.Size(60, 60);
 			this.ReverseDivButton.TabIndex = 28;
 			this.ReverseDivButton.Text = "1/x";
-			this.ReverseDivButton.UseVisualStyleBackColor = true;
+			this.ReverseDivButton.UseVisualStyleBackColor = false;
 			this.ReverseDivButton.Click += new System.EventHandler(this.ReverseDivButton_Click);
 			// 
 			// RootButton
 			// 
+			this.RootButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.RootButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.RootButton.Font = new System.Drawing.Font("Roboto", 18F);
 			this.RootButton.Location = new System.Drawing.Point(264, 140);
 			this.RootButton.Name = "RootButton";
 			this.RootButton.Size = new System.Drawing.Size(72, 60);
 			this.RootButton.TabIndex = 32;
 			this.RootButton.Text = "√x";
-			this.RootButton.UseVisualStyleBackColor = true;
+			this.RootButton.UseVisualStyleBackColor = false;
 			// 
 			// SquareButton
 			// 
+			this.SquareButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.SquareButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.SquareButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.SquareButton.Location = new System.Drawing.Point(0, 208);
 			this.SquareButton.Name = "SquareButton";
 			this.SquareButton.Size = new System.Drawing.Size(60, 60);
 			this.SquareButton.TabIndex = 33;
 			this.SquareButton.Text = "x^2";
-			this.SquareButton.UseVisualStyleBackColor = true;
+			this.SquareButton.UseVisualStyleBackColor = false;
 			// 
 			// CubeButton
 			// 
+			this.CubeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.CubeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.CubeButton.Font = new System.Drawing.Font("Roboto", 18F);
 			this.CubeButton.Location = new System.Drawing.Point(264, 206);
 			this.CubeButton.Name = "CubeButton";
 			this.CubeButton.Size = new System.Drawing.Size(72, 60);
 			this.CubeButton.TabIndex = 34;
 			this.CubeButton.Text = "x^3";
-			this.CubeButton.UseVisualStyleBackColor = true;
+			this.CubeButton.UseVisualStyleBackColor = false;
 			// 
 			// TenPowerButton
 			// 
+			this.TenPowerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.TenPowerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.TenPowerButton.Font = new System.Drawing.Font("Roboto", 18F);
 			this.TenPowerButton.Location = new System.Drawing.Point(264, 339);
 			this.TenPowerButton.Name = "TenPowerButton";
 			this.TenPowerButton.Size = new System.Drawing.Size(72, 60);
 			this.TenPowerButton.TabIndex = 35;
 			this.TenPowerButton.Text = "10^x";
-			this.TenPowerButton.UseVisualStyleBackColor = true;
+			this.TenPowerButton.UseVisualStyleBackColor = false;
 			// 
 			// TwoPowerButton
 			// 
+			this.TwoPowerButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.TwoPowerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.TwoPowerButton.Font = new System.Drawing.Font("Roboto", 18F);
 			this.TwoPowerButton.Location = new System.Drawing.Point(264, 274);
 			this.TwoPowerButton.Name = "TwoPowerButton";
 			this.TwoPowerButton.Size = new System.Drawing.Size(72, 60);
 			this.TwoPowerButton.TabIndex = 36;
 			this.TwoPowerButton.Text = "2^x";
-			this.TwoPowerButton.UseVisualStyleBackColor = true;
+			this.TwoPowerButton.UseVisualStyleBackColor = false;
 			// 
 			// AdvancedSwitch
 			// 
@@ -386,7 +400,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(259, 591);
+			this.ClientSize = new System.Drawing.Size(339, 591);
 			this.Controls.Add(this.AdvancedSwitch);
 			this.Controls.Add(this.TwoPowerButton);
 			this.Controls.Add(this.TenPowerButton);
