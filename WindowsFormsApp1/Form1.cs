@@ -48,6 +48,7 @@ namespace WindowsFormsApp1
 			TwoPowerButton.Click += funcButtonClick;
 			TenPowerButton.Click += funcButtonClick;
 			AdvancedSwitch.CheckedChanged += changeForm;
+			DarkSwitch.CheckedChanged += darkMode;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -248,21 +249,78 @@ namespace WindowsFormsApp1
 		{
 			if (AdvancedSwitch.Checked)
 			{
-				this.Size = new Size(355, 630);
+				this.Size = new Size(355, 665);
 				ResultLabel.Size = new Size(336, 85);
 				PreviewLabel.Size = new Size(336, 50);
 			}
 			else
 			{
-				this.Size = new Size(275, 630);
+				this.Size = new Size(275, 665);
 				ResultLabel.Size = new Size(258, 85);
 				PreviewLabel.Size = new Size(258, 50);
 			}
 		}
-
+		private void darkMode(object sender, EventArgs e)
+		{
+			// Graphics graphics = this.CreateGraphics();
+			// PaintEventArgs p = new PaintEventArgs(graphics, AdvancedSwitch.rect);
+			// p.Graphics.FillEllipse(Brushes.Blue, AdvancedSwitch.rect);
+			foreach (var button in this.Controls.OfType<System.Windows.Forms.Button>())
+			{
+				if (button.FlatStyle.ToString() == "Flat")
+				{
+					if (DarkSwitch.Checked)
+					{
+						button.BackColor = ColorTranslator.FromHtml("#0d3370");
+						button.ForeColor = Color.White;
+					}
+					else
+					{
+						button.BackColor = ColorTranslator.FromHtml("#f2cc8f");
+						button.ForeColor = Color.Black;
+					}
+				}
+				else
+				{
+					if (DarkSwitch.Checked)
+					{
+						button.BackColor = ColorTranslator.FromHtml("#1e1e1e");
+						button.ForeColor = Color.White;
+					}
+					else
+					{
+						button.BackColor = ColorTranslator.FromHtml("#e1e1e1");
+						button.ForeColor = Color.Black;
+					}
+				}
+			}
+			if (DarkSwitch.Checked)
+			{
+				this.BackColor = ColorTranslator.FromHtml("#0f0f0f");
+				ResultLabel.ForeColor = Color.White;
+				PreviewLabel.ForeColor = Color.White;
+				AdvancedHint.ForeColor = Color.White;
+				DarkHint.ForeColor = Color.White;
+			}
+			else
+			{
+				this.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+				ResultLabel.ForeColor = Color.Black;
+				PreviewLabel.ForeColor = Color.Black;
+				AdvancedHint.ForeColor = Color.Black;
+				DarkHint.ForeColor = Color.Black;
+			}
+		}
 	}
 	public class ToggleSwitch : CheckBox
 	{
+		public int a { get; set; }
+		int d = 0;
+		int r = 0;
+		Rectangle rect = new Rectangle();
+		SolidBrush activeBrush = new SolidBrush(Color.White);
+		SolidBrush activeBrushLight = new SolidBrush(Color.FromArgb(255, (byte)255, (byte)81, (byte)84));
+		SolidBrush activeBrushDark = new SolidBrush(Color.FromArgb(255, (byte)0, (byte)174, (byte)171));
 		public ToggleSwitch()
 		{
 			SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
@@ -274,17 +332,23 @@ namespace WindowsFormsApp1
 			e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 			using (var path = new GraphicsPath())
 			{
-				var d = Padding.All;
-				var r = this.Height - 2 * d;
+				d = Padding.All;
+				r = this.Height - 2 * d;
 				path.AddArc(d, d, r, r, 90, 180);
 				path.AddArc(this.Width - r - d, d, r, r, -90, 180);
 				e.Graphics.FillPath(Checked ? Brushes.DarkGray : Brushes.LightGray, path);
 				r = Height - 1;
-				var rect = Checked ? new Rectangle(Width - r - 1, 0, r, r)
-								   : new Rectangle(0, 0, r, r);
-				var redBrush = new SolidBrush(Color.FromArgb(255, (byte)255, (byte)81, (byte)84));
-				e.Graphics.FillEllipse(Checked ? Brushes.Crimson : Brushes.DarkGray, rect);
-
+				rect = Checked ? new Rectangle(Width  - r - 1, 0, r, r) : new Rectangle(0, 0, r, r);
+				CheckBox darkSwitch = System.Windows.Forms.Application.OpenForms["Form1"].Controls["DarkSwitch"] as CheckBox;
+				if (darkSwitch.Checked)
+				{
+					activeBrush = activeBrushDark;
+				}
+				else
+				{
+					activeBrush = activeBrushLight;
+				}
+				e.Graphics.FillEllipse(Checked ? activeBrush : Brushes.DarkGray, rect);
 			}
 		}
 	}
