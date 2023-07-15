@@ -249,13 +249,13 @@ namespace WindowsFormsApp1
 		{
 			if (AdvancedSwitch.Checked)
 			{
-				this.Size = new Size(355, 630);
+				this.Size = new Size(355, 665);
 				ResultLabel.Size = new Size(336, 85);
 				PreviewLabel.Size = new Size(336, 50);
 			}
 			else
 			{
-				this.Size = new Size(275, 630);
+				this.Size = new Size(275, 665);
 				ResultLabel.Size = new Size(258, 85);
 				PreviewLabel.Size = new Size(258, 50);
 			}
@@ -299,21 +299,28 @@ namespace WindowsFormsApp1
 				this.BackColor = ColorTranslator.FromHtml("#0f0f0f");
 				ResultLabel.ForeColor = Color.White;
 				PreviewLabel.ForeColor = Color.White;
+				AdvancedHint.ForeColor = Color.White;
+				DarkHint.ForeColor = Color.White;
 			}
 			else
 			{
 				this.BackColor = ColorTranslator.FromHtml("#f0f0f0");
 				ResultLabel.ForeColor = Color.Black;
 				PreviewLabel.ForeColor = Color.Black;
+				AdvancedHint.ForeColor = Color.Black;
+				DarkHint.ForeColor = Color.Black;
 			}
 		}
 	}
 	public class ToggleSwitch : CheckBox
 	{
+		public int a { get; set; }
 		int d = 0;
 		int r = 0;
 		Rectangle rect = new Rectangle();
 		SolidBrush activeBrush = new SolidBrush(Color.White);
+		SolidBrush activeBrushLight = new SolidBrush(Color.FromArgb(255, (byte)255, (byte)81, (byte)84));
+		SolidBrush activeBrushDark = new SolidBrush(Color.FromArgb(255, (byte)0, (byte)174, (byte)171));
 		public ToggleSwitch()
 		{
 			SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
@@ -331,16 +338,15 @@ namespace WindowsFormsApp1
 				path.AddArc(this.Width - r - d, d, r, r, -90, 180);
 				e.Graphics.FillPath(Checked ? Brushes.DarkGray : Brushes.LightGray, path);
 				r = Height - 1;
-				rect = Checked ? new Rectangle(Width - r - 1, 0, r, r)
-					: new Rectangle(0, 0, r, r);
+				rect = Checked ? new Rectangle(Width  - r - 1, 0, r, r) : new Rectangle(0, 0, r, r);
 				CheckBox darkSwitch = System.Windows.Forms.Application.OpenForms["Form1"].Controls["DarkSwitch"] as CheckBox;
 				if (darkSwitch.Checked)
 				{
-					activeBrush = new SolidBrush(Color.FromArgb(255, (byte)0, (byte)174, (byte)171));
+					activeBrush = activeBrushDark;
 				}
 				else
 				{
-					activeBrush = new SolidBrush(Color.FromArgb(255, (byte)255, (byte)81, (byte)84));
+					activeBrush = activeBrushLight;
 				}
 				e.Graphics.FillEllipse(Checked ? activeBrush : Brushes.DarkGray, rect);
 			}
