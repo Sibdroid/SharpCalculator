@@ -321,6 +321,7 @@ namespace WindowsFormsApp1
 			{
 				isChecked = false;
 				SwitchButton.Location = new Point(SwitchBox.Location.X + margin, SwitchButton.Location.Y);
+				SwitchButton.BackColor = Color.FromArgb(255, (byte)169, (byte)169, (byte)169);
 			}
 			else
 			{
@@ -328,6 +329,7 @@ namespace WindowsFormsApp1
 				int switchBoxEnd = SwitchBox.Location.X + SwitchBox.Size.Width;
 				SwitchButton.Location = new Point(switchBoxEnd - SwitchButton.Size.Width - margin,
 												  SwitchButton.Location.Y);
+				SwitchButton.BackColor = Color.FromArgb(255, (byte)255, (byte)81, (byte)84);
 			}
 		}
 	}
