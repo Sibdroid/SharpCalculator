@@ -49,6 +49,8 @@ namespace WindowsFormsApp1
 			TenPowerButton.Click += funcButtonClick;
 			AdvancedSwitch.CheckedChanged += changeForm;
 			DarkSwitch.CheckedChanged += darkMode;
+			SwitchBox.Click += hello;
+			SwitchButton.Click += hello;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -309,6 +311,23 @@ namespace WindowsFormsApp1
 				PreviewLabel.ForeColor = Color.Black;
 				AdvancedHint.ForeColor = Color.Black;
 				DarkHint.ForeColor = Color.Black;
+			}
+		}
+		private void hello(object sender, EventArgs e)
+		{
+			bool isChecked = false;
+			int margin = SwitchButton.Location.X - SwitchBox.Location.X;
+			if (isChecked)
+			{
+				isChecked = false;
+				SwitchButton.Location = new Point(SwitchBox.Location.X + margin, SwitchButton.Location.Y);
+			}
+			else
+			{
+				isChecked = true;
+				int switchBoxEnd = SwitchBox.Location.X + SwitchBox.Size.Width;
+				SwitchButton.Location = new Point(switchBoxEnd - SwitchButton.Size.Width - margin,
+												  SwitchButton.Location.Y);
 			}
 		}
 	}

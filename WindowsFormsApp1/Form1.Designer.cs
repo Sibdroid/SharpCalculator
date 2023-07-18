@@ -62,6 +62,8 @@
 			this.AdvancedSwitch = new WindowsFormsApp1.ToggleSwitch();
 			this.AdvancedHint = new System.Windows.Forms.Label();
 			this.DarkHint = new System.Windows.Forms.Label();
+			this.SwitchBox = new System.Windows.Forms.Button();
+			this.SwitchButton = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// NumButton7
@@ -434,12 +436,36 @@
 			this.DarkHint.Text = "Dark";
 			this.DarkHint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// SwitchBox
+			// 
+			this.SwitchBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.SwitchBox.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SwitchBox.Location = new System.Drawing.Point(274, 472);
+			this.SwitchBox.Name = "SwitchBox";
+			this.SwitchBox.Size = new System.Drawing.Size(126, 48);
+			this.SwitchBox.TabIndex = 41;
+			this.SwitchBox.UseVisualStyleBackColor = true;
+			// 
+			// SwitchButton
+			// 
+			this.SwitchButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(81)))), ((int)(((byte)(84)))));
+			this.SwitchButton.FlatAppearance.BorderSize = 0;
+			this.SwitchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.SwitchButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.SwitchButton.Location = new System.Drawing.Point(278, 476);
+			this.SwitchButton.Name = "SwitchButton";
+			this.SwitchButton.Size = new System.Drawing.Size(40, 40);
+			this.SwitchButton.TabIndex = 42;
+			this.SwitchButton.UseVisualStyleBackColor = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(260, 625);
+			this.ClientSize = new System.Drawing.Size(420, 625);
+			this.Controls.Add(this.SwitchButton);
+			this.Controls.Add(this.SwitchBox);
 			this.Controls.Add(this.DarkHint);
 			this.Controls.Add(this.AdvancedHint);
 			this.Controls.Add(this.DarkSwitch);
@@ -516,6 +542,8 @@
 		private ToggleSwitch DarkSwitch;
 		private System.Windows.Forms.Label AdvancedHint;
 		private System.Windows.Forms.Label DarkHint;
+		private System.Windows.Forms.Button SwitchBox;
+		private System.Windows.Forms.Button SwitchButton;
 	}
 }
 
