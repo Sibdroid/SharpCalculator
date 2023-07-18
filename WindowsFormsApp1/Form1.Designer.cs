@@ -415,7 +415,6 @@
 			// 
 			// SwitchBox
 			// 
-			this.SwitchBox.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
 			this.SwitchBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.SwitchBox.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.SwitchBox.Location = new System.Drawing.Point(0, 537);

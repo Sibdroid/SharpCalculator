@@ -49,8 +49,10 @@ namespace WindowsFormsApp1
 			TwoPowerButton.Click += funcButtonClick;
 			TenPowerButton.Click += funcButtonClick;
 			DarkSwitch.CheckedChanged += darkMode;
-			SwitchBox.Click += hello;
-			SwitchButton.Click += hello;
+			SwitchBox.Click += ChangeForm;
+			SwitchButton.Click += ChangeForm;
+			SwitchButton.FlatAppearance.MouseOverBackColor = SwitchButton.BackColor;
+			SwitchBox.FlatAppearance.MouseOverBackColor = SwitchBox.BackColor;
 		}
 
 		private void buttonClick(object sender, EventArgs e)
@@ -254,7 +256,6 @@ namespace WindowsFormsApp1
 			// p.Graphics.FillEllipse(Brushes.Blue, AdvancedSwitch.rect);
 			foreach (var button in this.Controls.OfType<System.Windows.Forms.Button>())
 			{
-				Console.WriteLine(button.Name);
 				if (button.FlatStyle.ToString() == "Flat")
 				{
 					if (DarkSwitch.Checked)
@@ -299,14 +300,14 @@ namespace WindowsFormsApp1
 				DarkHint.ForeColor = Color.Black;
 			}
 		}
-		private void hello(object sender, EventArgs e)
+		private void ChangeForm(object sender, EventArgs e)
 		{
 			int margin = 4;
 			if (this.isAdvancedChanged)
 			{
 				this.isAdvancedChanged = false;
 				SwitchButton.Location = new Point(SwitchBox.Location.X + margin, SwitchButton.Location.Y);
-				SwitchButton.BackColor = Color.FromArgb(255, (byte)169, (byte)169, (byte)169);
+				SwitchButton.BackColor = ColorTranslator.FromHtml("#a9a9a9");
 				this.Size = new Size(275, 665);
 				ResultLabel.Size = new Size(258, 85);
 				PreviewLabel.Size = new Size(258, 50);
@@ -318,12 +319,15 @@ namespace WindowsFormsApp1
 				int switchBoxEnd = SwitchBox.Location.X + SwitchBox.Size.Width;
 				SwitchButton.Location = new Point(switchBoxEnd - SwitchButton.Size.Width - margin,
 												  SwitchButton.Location.Y);
-				SwitchButton.BackColor = Color.FromArgb(255, (byte)255, (byte)81, (byte)84);
+				SwitchButton.BackColor = ColorTranslator.FromHtml("#ff5154");
 				this.Size = new Size(355, 665);
 				ResultLabel.Size = new Size(336, 85);
 				PreviewLabel.Size = new Size(336, 50);
 			}
+			SwitchButton.FlatAppearance.MouseOverBackColor = SwitchButton.BackColor;
+			SwitchBox.FlatAppearance.MouseOverBackColor = SwitchBox.BackColor;
 		}
+
 	}
 	public class ToggleSwitch : CheckBox
 	{
