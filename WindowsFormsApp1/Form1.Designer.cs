@@ -59,10 +59,11 @@
 			this.TenPowerButton = new System.Windows.Forms.Button();
 			this.TwoPowerButton = new System.Windows.Forms.Button();
 			this.AdvancedHint = new System.Windows.Forms.Label();
+			this.AdvancedSwitchBox = new System.Windows.Forms.Button();
+			this.AdvancedSwitchButton = new System.Windows.Forms.Button();
+			this.DarkSwitchButton = new System.Windows.Forms.Button();
+			this.DarkSwitchBox = new System.Windows.Forms.Button();
 			this.DarkHint = new System.Windows.Forms.Label();
-			this.SwitchBox = new System.Windows.Forms.Button();
-			this.SwitchButton = new System.Windows.Forms.Button();
-			this.DarkSwitch = new WindowsFormsApp1.ToggleSwitch();
 			this.SuspendLayout();
 			// 
 			// NumButton7
@@ -394,57 +395,68 @@
 			this.AdvancedHint.AutoEllipsis = true;
 			this.AdvancedHint.Font = new System.Drawing.Font("Roboto", 20F);
 			this.AdvancedHint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.AdvancedHint.Location = new System.Drawing.Point(0, 588);
+			this.AdvancedHint.Location = new System.Drawing.Point(-2, 588);
 			this.AdvancedHint.Name = "AdvancedHint";
-			this.AdvancedHint.Size = new System.Drawing.Size(96, 35);
+			this.AdvancedHint.Size = new System.Drawing.Size(94, 35);
 			this.AdvancedHint.TabIndex = 39;
 			this.AdvancedHint.Text = "Pro";
 			this.AdvancedHint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// AdvancedSwitchBox
+			// 
+			this.AdvancedSwitchBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.AdvancedSwitchBox.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.AdvancedSwitchBox.Location = new System.Drawing.Point(0, 537);
+			this.AdvancedSwitchBox.Name = "AdvancedSwitchBox";
+			this.AdvancedSwitchBox.Size = new System.Drawing.Size(92, 48);
+			this.AdvancedSwitchBox.TabIndex = 41;
+			this.AdvancedSwitchBox.UseVisualStyleBackColor = true;
+			// 
+			// AdvancedSwitchButton
+			// 
+			this.AdvancedSwitchButton.BackColor = System.Drawing.Color.DarkGray;
+			this.AdvancedSwitchButton.FlatAppearance.BorderSize = 0;
+			this.AdvancedSwitchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.AdvancedSwitchButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.AdvancedSwitchButton.Location = new System.Drawing.Point(4, 541);
+			this.AdvancedSwitchButton.Name = "AdvancedSwitchButton";
+			this.AdvancedSwitchButton.Size = new System.Drawing.Size(40, 40);
+			this.AdvancedSwitchButton.TabIndex = 42;
+			this.AdvancedSwitchButton.UseVisualStyleBackColor = false;
+			// 
+			// DarkSwitchButton
+			// 
+			this.DarkSwitchButton.BackColor = System.Drawing.Color.DarkGray;
+			this.DarkSwitchButton.FlatAppearance.BorderSize = 0;
+			this.DarkSwitchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.DarkSwitchButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.DarkSwitchButton.Location = new System.Drawing.Point(104, 541);
+			this.DarkSwitchButton.Name = "DarkSwitchButton";
+			this.DarkSwitchButton.Size = new System.Drawing.Size(40, 40);
+			this.DarkSwitchButton.TabIndex = 44;
+			this.DarkSwitchButton.UseVisualStyleBackColor = false;
+			// 
+			// DarkSwitchBox
+			// 
+			this.DarkSwitchBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.DarkSwitchBox.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.DarkSwitchBox.Location = new System.Drawing.Point(100, 537);
+			this.DarkSwitchBox.Name = "DarkSwitchBox";
+			this.DarkSwitchBox.Size = new System.Drawing.Size(92, 48);
+			this.DarkSwitchBox.TabIndex = 43;
+			this.DarkSwitchBox.UseVisualStyleBackColor = true;
 			// 
 			// DarkHint
 			// 
 			this.DarkHint.AutoEllipsis = true;
 			this.DarkHint.Font = new System.Drawing.Font("Roboto", 20F);
 			this.DarkHint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-			this.DarkHint.Location = new System.Drawing.Point(132, 588);
+			this.DarkHint.Location = new System.Drawing.Point(98, 588);
 			this.DarkHint.Name = "DarkHint";
-			this.DarkHint.Size = new System.Drawing.Size(126, 35);
-			this.DarkHint.TabIndex = 40;
+			this.DarkHint.Size = new System.Drawing.Size(94, 35);
+			this.DarkHint.TabIndex = 45;
 			this.DarkHint.Text = "Dark";
 			this.DarkHint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// SwitchBox
-			// 
-			this.SwitchBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.SwitchBox.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.SwitchBox.Location = new System.Drawing.Point(0, 537);
-			this.SwitchBox.Name = "SwitchBox";
-			this.SwitchBox.Size = new System.Drawing.Size(96, 48);
-			this.SwitchBox.TabIndex = 41;
-			this.SwitchBox.UseVisualStyleBackColor = true;
-			// 
-			// SwitchButton
-			// 
-			this.SwitchButton.BackColor = System.Drawing.Color.DarkGray;
-			this.SwitchButton.FlatAppearance.BorderSize = 0;
-			this.SwitchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.SwitchButton.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.SwitchButton.Location = new System.Drawing.Point(4, 541);
-			this.SwitchButton.Name = "SwitchButton";
-			this.SwitchButton.Size = new System.Drawing.Size(40, 40);
-			this.SwitchButton.TabIndex = 42;
-			this.SwitchButton.UseVisualStyleBackColor = false;
-			// 
-			// DarkSwitch
-			// 
-			this.DarkSwitch.a = 0;
-			this.DarkSwitch.Location = new System.Drawing.Point(132, 538);
-			this.DarkSwitch.Name = "DarkSwitch";
-			this.DarkSwitch.Padding = new System.Windows.Forms.Padding(6);
-			this.DarkSwitch.Size = new System.Drawing.Size(126, 48);
-			this.DarkSwitch.TabIndex = 38;
-			this.DarkSwitch.Text = "DarkSwitch";
-			this.DarkSwitch.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -452,11 +464,12 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.ClientSize = new System.Drawing.Size(260, 625);
-			this.Controls.Add(this.SwitchButton);
-			this.Controls.Add(this.SwitchBox);
 			this.Controls.Add(this.DarkHint);
+			this.Controls.Add(this.DarkSwitchButton);
+			this.Controls.Add(this.DarkSwitchBox);
+			this.Controls.Add(this.AdvancedSwitchButton);
+			this.Controls.Add(this.AdvancedSwitchBox);
 			this.Controls.Add(this.AdvancedHint);
-			this.Controls.Add(this.DarkSwitch);
 			this.Controls.Add(this.TwoPowerButton);
 			this.Controls.Add(this.TenPowerButton);
 			this.Controls.Add(this.CubeButton);
@@ -525,11 +538,12 @@
 		private System.Windows.Forms.Button CubeButton;
 		private System.Windows.Forms.Button TenPowerButton;
 		private System.Windows.Forms.Button TwoPowerButton;
-		private ToggleSwitch DarkSwitch;
 		private System.Windows.Forms.Label AdvancedHint;
+		private System.Windows.Forms.Button AdvancedSwitchBox;
+		private System.Windows.Forms.Button AdvancedSwitchButton;
+		private System.Windows.Forms.Button DarkSwitchButton;
+		private System.Windows.Forms.Button DarkSwitchBox;
 		private System.Windows.Forms.Label DarkHint;
-		private System.Windows.Forms.Button SwitchBox;
-		private System.Windows.Forms.Button SwitchButton;
 	}
 }
 
