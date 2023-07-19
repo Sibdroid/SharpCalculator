@@ -272,7 +272,14 @@ namespace WindowsFormsApp1
 				int switchBoxEnd = AdvancedSwitchBox.Location.X + AdvancedSwitchBox.Size.Width;
 				AdvancedSwitchButton.Location = new Point(switchBoxEnd - AdvancedSwitchButton.Size.Width - margin,
 												  AdvancedSwitchButton.Location.Y);
-				AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#ff5154");
+				if (this.isDarkChanged)
+				{
+					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#00aeab");
+				}
+				else
+				{
+					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#ff5154");
+				}
 				this.Size = new Size(355, 665);
 				ResultLabel.Size = new Size(336, 85);
 				PreviewLabel.Size = new Size(336, 50);
@@ -284,23 +291,34 @@ namespace WindowsFormsApp1
 		{
 			if (this.isDarkChanged)
 			{
+				// to light mode
 				this.BackColor = ColorTranslator.FromHtml("#f0f0f0");
 				ResultLabel.ForeColor = Color.Black;
 				PreviewLabel.ForeColor = Color.Black;
 				AdvancedHint.ForeColor = Color.Black;
 				DarkHint.ForeColor = Color.Black;
+				if (this.isAdvancedChanged)
+				{
+					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#ff5154");
+				}
 			}
 			else
 			{
+				// to dark mode
 				this.BackColor = ColorTranslator.FromHtml("#0f0f0f");
 				ResultLabel.ForeColor = Color.White;
 				PreviewLabel.ForeColor = Color.White;
 				AdvancedHint.ForeColor = Color.White;
 				DarkHint.ForeColor = Color.White;
+				if (this.isAdvancedChanged)
+				{
+					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#00aeab");
+				}
 			}
 			int margin = 4;
 			if (this.isDarkChanged)
 			{
+				// to light mode
 				this.isDarkChanged = false;
 				DarkSwitchButton.Location = new Point(DarkSwitchBox.Location.X + margin, DarkSwitchButton.Location.Y);
 				DarkSwitchButton.BackColor = ColorTranslator.FromHtml("#a9a9a9");
@@ -315,7 +333,10 @@ namespace WindowsFormsApp1
 						}
 						else
 						{
-							// temporarily pass
+							if (button.Name.ToString().Contains("Box"))
+							{
+								button.FlatAppearance.BorderColor = Color.Black;
+							}
 						}
 					}
 					else
@@ -327,6 +348,7 @@ namespace WindowsFormsApp1
 			}
 			else
 			{
+				// to dark mode
 				this.isDarkChanged = true;
 				int switchBoxEnd = DarkSwitchBox.Location.X + DarkSwitchBox.Size.Width;
 				DarkSwitchButton.Location = new Point(switchBoxEnd - DarkSwitchButton.Size.Width - margin,
@@ -343,7 +365,10 @@ namespace WindowsFormsApp1
 						}
 						else
 						{
-							// temporarily pass
+							if (button.Name.ToString().Contains("Box"))
+							{
+								button.FlatAppearance.BorderColor = Color.White;
+							}
 						}
 					}
 					else
