@@ -21,6 +21,16 @@ namespace WindowsFormsApp1
 		bool isChanged = false;
 		bool isAdvancedChanged = false;
 		bool isDarkChanged = false;
+		Color LightGrey = ColorTranslator.FromHtml("#E1E1E1");
+		Color SolidGrey = ColorTranslator.FromHtml("#A9A9A9");
+		Color DarkGrey = ColorTranslator.FromHtml("#1E1E1E");
+		Color DarkBlue = ColorTranslator.FromHtml("#0D3370");
+		Color Navy = ColorTranslator.FromHtml("#00AEAB");
+		Color Salmon = ColorTranslator.FromHtml("#FF5154");
+		Color Peach = ColorTranslator.FromHtml("#F2CC8F");
+		Color Ivory = ColorTranslator.FromHtml("#F0F0F0");
+		Color Pitch = ColorTranslator.FromHtml("#0F0F0F");
+
 		public Form1()
 		{
 			InitializeComponent();
@@ -260,7 +270,7 @@ namespace WindowsFormsApp1
 			{
 				this.isAdvancedChanged = false;
 				AdvancedSwitchButton.Location = new Point(AdvancedSwitchBox.Location.X + margin, AdvancedSwitchButton.Location.Y);
-				AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#a9a9a9");
+				AdvancedSwitchButton.BackColor = this.SolidGrey;
 				this.Size = new Size(275, 665);
 				ResultLabel.Size = new Size(258, 85);
 				PreviewLabel.Size = new Size(258, 50);
@@ -274,11 +284,11 @@ namespace WindowsFormsApp1
 												  AdvancedSwitchButton.Location.Y);
 				if (this.isDarkChanged)
 				{
-					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#00aeab");
+					AdvancedSwitchButton.BackColor = this.Navy;
 				}
 				else
 				{
-					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#ff5154");
+					AdvancedSwitchButton.BackColor = this.Salmon;
 				}
 				this.Size = new Size(355, 665);
 				ResultLabel.Size = new Size(336, 85);
@@ -292,27 +302,27 @@ namespace WindowsFormsApp1
 			if (this.isDarkChanged)
 			{
 				// to light mode
-				this.BackColor = ColorTranslator.FromHtml("#f0f0f0");
+				this.BackColor = this.Ivory;
 				ResultLabel.ForeColor = Color.Black;
 				PreviewLabel.ForeColor = Color.Black;
 				AdvancedHint.ForeColor = Color.Black;
 				DarkHint.ForeColor = Color.Black;
 				if (this.isAdvancedChanged)
 				{
-					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#ff5154");
+					AdvancedSwitchButton.BackColor = this.Salmon;
 				}
 			}
 			else
 			{
 				// to dark mode
-				this.BackColor = ColorTranslator.FromHtml("#0f0f0f");
+				this.BackColor = this.Pitch;
 				ResultLabel.ForeColor = Color.White;
 				PreviewLabel.ForeColor = Color.White;
 				AdvancedHint.ForeColor = Color.White;
 				DarkHint.ForeColor = Color.White;
 				if (this.isAdvancedChanged)
 				{
-					AdvancedSwitchButton.BackColor = ColorTranslator.FromHtml("#00aeab");
+					AdvancedSwitchButton.BackColor = this.Navy;
 				}
 			}
 			int margin = 4;
@@ -321,14 +331,14 @@ namespace WindowsFormsApp1
 				// to light mode
 				this.isDarkChanged = false;
 				DarkSwitchButton.Location = new Point(DarkSwitchBox.Location.X + margin, DarkSwitchButton.Location.Y);
-				DarkSwitchButton.BackColor = ColorTranslator.FromHtml("#a9a9a9");
+				DarkSwitchButton.BackColor = this.SolidGrey;
 				foreach (var button in this.Controls.OfType<System.Windows.Forms.Button>())
 				{
 					if (button.FlatStyle.ToString() == "Flat")
 					{
 						if (!button.Name.ToString().Contains("Switch"))
 						{
-							button.BackColor = ColorTranslator.FromHtml("#F2CC8F");
+							button.BackColor = this.Peach;
 							button.ForeColor = Color.Black;
 						}
 						else
@@ -341,7 +351,7 @@ namespace WindowsFormsApp1
 					}
 					else
 					{
-						button.BackColor = ColorTranslator.FromHtml("#E1E1E1");
+						button.BackColor = this.LightGrey;
 						button.ForeColor = Color.Black;
 					}
 				}
@@ -353,14 +363,14 @@ namespace WindowsFormsApp1
 				int switchBoxEnd = DarkSwitchBox.Location.X + DarkSwitchBox.Size.Width;
 				DarkSwitchButton.Location = new Point(switchBoxEnd - DarkSwitchButton.Size.Width - margin,
 					                                  DarkSwitchButton.Location.Y);
-				DarkSwitchButton.BackColor = ColorTranslator.FromHtml("#00aeab");
+				DarkSwitchButton.BackColor = this.Navy;
 				foreach (var button in this.Controls.OfType<System.Windows.Forms.Button>())
 				{
 					if (button.FlatStyle.ToString() == "Flat")
 					{
 						if (!button.Name.ToString().Contains("Switch"))
 						{
-							button.BackColor = ColorTranslator.FromHtml("#0D3370");
+							button.BackColor = this.DarkBlue;
 							button.ForeColor = Color.White;
 						}
 						else
@@ -373,7 +383,7 @@ namespace WindowsFormsApp1
 					}
 					else
 					{
-						button.BackColor = ColorTranslator.FromHtml("#1E1E1E");
+						button.BackColor = this.DarkGrey;
 						button.ForeColor = Color.White;
 					}
 				}
@@ -462,7 +472,7 @@ namespace WindowsFormsApp1
 					}
 				}
 			}
-			catch (EvaluationException e)
+			catch (EvaluationException)
 			{
 				label.Text = "#";
 			}
