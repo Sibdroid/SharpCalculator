@@ -112,7 +112,8 @@ namespace WindowsFormsApp1
 					break;
 
 			}
-			Tools.calculateFunc(ResultLabel, PreviewLabel, function, argument1, argument2);	
+			Tools.calculateFunc(ResultLabel, PreviewLabel, function, argument1, argument2);
+			isChanged = false;
 
 		}
 		private void ClearButton_Click(object sender, EventArgs e)
@@ -124,6 +125,8 @@ namespace WindowsFormsApp1
 		private void ResultButton_Click(object sender, EventArgs e)
 		{
 			Tools.calculateResult(ResultLabel, PreviewLabel);
+			isChanged = false;
+			Console.WriteLine(isChanged);
 		}
 
 		private void EraseButton_Click(object sender, EventArgs e)
@@ -219,6 +222,7 @@ namespace WindowsFormsApp1
 					case "Oemplus":
 						Tools.calculateResult(ResultLabel, PreviewLabel);
 						overwriteChange = true;
+						isChanged = false;
 						break;
 					default:
 						if (text.Length == 2 && text[0].ToString() == "D")
@@ -262,6 +266,7 @@ namespace WindowsFormsApp1
 		{
 			ResultLabel.Text = "1/" + ResultLabel.Text;
 			Tools.calculateResult(ResultLabel, PreviewLabel);
+			isChanged = false;
 		}
 		private void ChangeForm(object sender, EventArgs e)
 		{
