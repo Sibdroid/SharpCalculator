@@ -71,13 +71,22 @@ namespace WindowsFormsApp1
 
 		private void buttonClick(object sender, EventArgs e)
 		{
-			if (!isChanged)
-			{
-				ResultLabel.Text = "";
-				isChanged = true;
-			}
 			System.Windows.Forms.Button button = sender as System.Windows.Forms.Button;
 			string text = button.Text;
+			string digits = "0123456789().";
+			if (!isChanged)
+			{
+				if (digits.Contains(text))
+				{  
+					ResultLabel.Text = "";
+					if (PreviewLabel.Text.Length != 0 && PreviewLabel.Text != "#")
+					{
+						PreviewLabel.Text += " (*)";
+					}
+				}
+
+				isChanged = true;
+			}
 			ResultLabel.Text += text;
 			Tools.resizeFont(ResultLabel);
 		}
@@ -243,7 +252,15 @@ namespace WindowsFormsApp1
 			}
 			if (!isChanged && !overwriteChange)
 			{
-				ResultLabel.Text = "";
+				string digits = "0123456789().";
+				if (digits.Contains(value))
+				{
+					ResultLabel.Text = "";
+					if (PreviewLabel.Text.Length != 0 && PreviewLabel.Text != "#")
+					{
+						PreviewLabel.Text += " (*)";
+					}
+				}
 				isChanged = true;
 			}
 			ResultLabel.Text += value;
