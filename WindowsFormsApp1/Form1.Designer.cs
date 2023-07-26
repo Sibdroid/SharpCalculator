@@ -64,6 +64,7 @@
 			this.DarkSwitchButton = new System.Windows.Forms.Button();
 			this.DarkSwitchBox = new System.Windows.Forms.Button();
 			this.DarkHint = new System.Windows.Forms.Label();
+			this.Log10Button = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// NumButton7
@@ -458,12 +459,25 @@
 			this.DarkHint.Text = "Dark";
 			this.DarkHint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// Log10Button
+			// 
+			this.Log10Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(204)))), ((int)(((byte)(143)))));
+			this.Log10Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.Log10Button.Font = new System.Drawing.Font("Roboto", 18F);
+			this.Log10Button.Location = new System.Drawing.Point(264, 406);
+			this.Log10Button.Name = "Log10Button";
+			this.Log10Button.Size = new System.Drawing.Size(72, 60);
+			this.Log10Button.TabIndex = 46;
+			this.Log10Button.Text = "log";
+			this.Log10Button.UseVisualStyleBackColor = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(260, 625);
+			this.ClientSize = new System.Drawing.Size(355, 625);
+			this.Controls.Add(this.Log10Button);
 			this.Controls.Add(this.DarkHint);
 			this.Controls.Add(this.DarkSwitchButton);
 			this.Controls.Add(this.DarkSwitchBox);
@@ -544,6 +558,7 @@
 		private System.Windows.Forms.Button DarkSwitchButton;
 		private System.Windows.Forms.Button DarkSwitchBox;
 		private System.Windows.Forms.Label DarkHint;
+		private System.Windows.Forms.Button Log10Button;
 	}
 }
 

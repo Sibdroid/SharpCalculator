@@ -59,6 +59,7 @@ namespace WindowsFormsApp1
 			CubeButton.Click += funcButtonClick;
 			TwoPowerButton.Click += funcButtonClick;
 			TenPowerButton.Click += funcButtonClick;
+			Log10Button.Click += funcButtonClick;
 			AdvancedSwitchBox.Click += ChangeForm;
 			AdvancedSwitchButton.Click += ChangeForm;
 			DarkSwitchBox.Click += darkMode;
@@ -118,6 +119,11 @@ namespace WindowsFormsApp1
 				case "TenPowerButton":
 					argument1 = "10";
 					argument2 = ResultLabel.Text;
+					break;
+				case "Log10Button":
+					function = "Log";
+					argument1 = ResultLabel.Text;
+					argument2 = "10";
 					break;
 
 			}
@@ -412,6 +418,8 @@ namespace WindowsFormsApp1
 			}
 			DarkSwitchButton.FlatAppearance.MouseOverBackColor = DarkSwitchButton.BackColor;
 			DarkSwitchBox.FlatAppearance.MouseOverBackColor = DarkSwitchBox.BackColor;
+			AdvancedSwitchButton.FlatAppearance.MouseOverBackColor = AdvancedSwitchButton.BackColor;
+			AdvancedSwitchBox.FlatAppearance.MouseOverBackColor = AdvancedSwitchBox.BackColor;
 		}
 	}
 	public class Tools
@@ -461,7 +469,15 @@ namespace WindowsFormsApp1
 			string arguments = preview.Text.Substring(first + 1, last - first - 1);
 			arguments = arguments.Replace(", ", ",");
 			string[] divided = arguments.Split(',');
-			preview.Text = $"{divided[0]}^{divided[1]}";
+			switch (function)
+			{
+				case "Pow":
+					preview.Text = $"{divided[0]}^{divided[1]}";
+					break;
+				case "Log":
+					preview.Text = $"Log: {divided[0]}, {divided[1]}";
+					break;
+			}
 		}
 		public static void calculateResult(Label label, Label preview)
 		{
