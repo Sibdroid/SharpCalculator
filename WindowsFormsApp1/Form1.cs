@@ -60,6 +60,7 @@ namespace WindowsFormsApp1
 			TwoPowerButton.Click += funcButtonClick;
 			TenPowerButton.Click += funcButtonClick;
 			Log10Button.Click += funcButtonClick;
+			LogEButton.Click += funcButtonClick;
 			AdvancedSwitchBox.Click += ChangeForm;
 			AdvancedSwitchButton.Click += ChangeForm;
 			DarkSwitchBox.Click += darkMode;
@@ -98,6 +99,7 @@ namespace WindowsFormsApp1
 			string argument1 = "";
 			string argument2 = "";
 			string function = "Pow";
+			Dictionary<string, float> parameters = null;
 			switch (name)
 			{
 				case "RootButton":
@@ -121,13 +123,24 @@ namespace WindowsFormsApp1
 					argument2 = ResultLabel.Text;
 					break;
 				case "Log10Button":
+					// Arguments are swapped to fit NCalc's standard
 					function = "Log";
 					argument1 = ResultLabel.Text;
 					argument2 = "10";
 					break;
+				case "LogEButton":
+					// Arguments are swapped to fit NCalc's standard
+					function = "Log";
+					argument1 = ResultLabel.Text;
+					argument2 = "e";
+					parameters = new Dictionary<string, float>();
+					parameters["e"] = 2.718281828459045f;
+					break;
 
 			}
-			Tools.calculateFunc(ResultLabel, PreviewLabel, function, argument1, argument2);
+			Tools.calculateFunc(ResultLabel, PreviewLabel, function,
+								argument1, argument2, parameters);
+				
 			isChanged = false;
 
 		}
@@ -296,6 +309,7 @@ namespace WindowsFormsApp1
 			int margin = 4;
 			if (this.isAdvancedChanged)
 			{
+				// to smaller
 				this.isAdvancedChanged = false;
 				AdvancedSwitchButton.Location = new Point(AdvancedSwitchBox.Location.X + margin, AdvancedSwitchButton.Location.Y);
 				AdvancedSwitchButton.BackColor = this.SolidGrey;
@@ -306,6 +320,7 @@ namespace WindowsFormsApp1
 			}
 			else
 			{
+				// to larger
 				this.isAdvancedChanged = true;
 				int switchBoxEnd = AdvancedSwitchBox.Location.X + AdvancedSwitchBox.Size.Width;
 				AdvancedSwitchButton.Location = new Point(switchBoxEnd - AdvancedSwitchButton.Size.Width - margin,
@@ -459,12 +474,12 @@ namespace WindowsFormsApp1
 			label.Text = $"{function}({argument1}| {argument2})";
 		}
 		public static void calculateFunc(Label label, Label preview, string function, 
-			                             string argument1, string argument2)
+			                             string argument1, string argument2,
+										 Dictionary<string, float> parameters = null)
 		{
 			label.Text = $"{function}({argument1}| {argument2})";
-			Console.WriteLine(label.Text);
-			calculateResult(label, preview);
-			int first = preview.Text.IndexOf('(');
+			calculateResult(label, preview, parameters);
+			int first = preview.Text.IndexOf('('); 
 			int last = preview.Text.LastIndexOf(')');
 			string arguments = preview.Text.Substring(first + 1, last - first - 1);
 			arguments = arguments.Replace(", ", ",");
@@ -475,11 +490,13 @@ namespace WindowsFormsApp1
 					preview.Text = $"{divided[0]}^{divided[1]}";
 					break;
 				case "Log":
-					preview.Text = $"Log: {divided[0]}, {divided[1]}";
+					// Arguments are swapped back to fit human standard
+					preview.Text = $"Log: {divided[1]}, {divided[0]}";
 					break;
 			}
 		}
-		public static void calculateResult(Label label, Label preview)
+		public static void calculateResult(Label label, Label preview,
+			                               Dictionary <string, float> parameters = null)
 		{
 			bool changedPreview = false;
 			if (label.Text.Contains("^"))
@@ -492,6 +509,14 @@ namespace WindowsFormsApp1
 			label.Text = label.Text.Replace(",", ".");
 			label.Text = label.Text.Replace("|", ",");
 			Expression expression = new Expression(label.Text);
+			if (parameters != null)
+			{
+				foreach (KeyValuePair <string, float> parameter in parameters)
+				{
+					expression.Parameters[parameter.Key] = parameter.Value;
+					Console.WriteLine("here!");
+				}
+			}
 			if (!changedPreview)
 			{
 				preview.Text = label.Text;
